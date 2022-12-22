@@ -14,3 +14,9 @@
         return randomChoiceClass;
  }
     getComputerChoice();
+
+// declares a function named roundResults which determines if the player or computer won an individual round
+
+function roundResults (playerSelection, computerSelection){
+
+}
