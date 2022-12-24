@@ -35,9 +35,10 @@ function roundResults (playerSelection, computerSelection){
     } else {
         message = "You Win!";
     }
-    computerSelection = getComputerChoice();
-    playerSelection = "Rock";
+    
     console.log(message);
     return;
 }
-    roundResults();
+    computerSelection = getComputerChoice();
+    playerSelection = "Rock";
+    roundResults(playerSelection, computerSelection);
