@@ -6,8 +6,8 @@
         choiceClass [1] = "Paper";
         choiceClass [2] = "Scissors";
         let randomChoiceClass = Math.floor(Math.random() * choiceClass.length);
-        // console.log(choiceClass[randomChoiceClass]);
-        return randomChoiceClass;
+        //console.log(choiceClass[randomChoiceClass]);
+        return choiceClass[randomChoiceClass];
  }
     getComputerChoice();
 
@@ -35,7 +35,3 @@ function roundResults (playerSelection, computerSelection){
     computerSelection = getComputerChoice();
     playerSelection = "Rock";
     roundResults(playerSelection, computerSelection);
-
-    // getComputerChoice() is "trapped" inside of my first function
-    //so, i am unable to define computerSelection to be getComputerChoice.
-    //playerSelection is fine
