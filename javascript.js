@@ -1,8 +1,4 @@
- // declares a function named getComputerChoice
- // declares an array named choiceClass, with contains an item for each computer choice
- // randomly selects a number which corresponds to an array item
- // logs message to console which displays randomly generated computer choice
- // ends function execution and specifies value to be returned to the function caller
+ // declares a function (getComputerChoice), an array (choiceClass), and randomly selectes a number/array item
  
  function getComputerChoice () {
     let choiceClass = []
@@ -15,9 +11,7 @@
  }
     getComputerChoice();
 
-// declares a function named roundResults which determines if the player or computer won an individual round
-// add conditional statements to return a string that declares the winner of the round
-// declares function parameters
+// declares a function named roundResults which declares the results based off conditional statements
 
 function roundResults (playerSelection, computerSelection){
     if (playerSelection === computerSelection) {
@@ -35,10 +29,13 @@ function roundResults (playerSelection, computerSelection){
     } else {
         message = "You Win!";
     }
-    
     console.log(message);
     return;
 }
     computerSelection = getComputerChoice();
     playerSelection = "Rock";
     roundResults(playerSelection, computerSelection);
+
+    // getComputerChoice() is "trapped" inside of my first function
+    //so, i am unable to define computerSelection to be getComputerChoice.
+    //playerSelection is fine
