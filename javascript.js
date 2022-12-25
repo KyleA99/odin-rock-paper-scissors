@@ -6,7 +6,6 @@
         choiceClass [1] = "Paper";
         choiceClass [2] = "Scissors";
         let randomChoiceClass = Math.floor(Math.random() * choiceClass.length);
-        //console.log(choiceClass[randomChoiceClass]);
         return choiceClass[randomChoiceClass];
  }
     getComputerChoice();
