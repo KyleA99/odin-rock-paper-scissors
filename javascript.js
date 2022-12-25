@@ -32,6 +32,9 @@ function roundResults (playerSelection, computerSelection){
     console.log(message);
     return;
 }
+    playerSelection = "rock";
     computerSelection = getComputerChoice();
-    playerSelection = "Rock";
+    playerSelection = playerSelection.toLowerCase();
+    computerSelection = computerSelection.toLowerCase();
+
     roundResults(playerSelection, computerSelection);
