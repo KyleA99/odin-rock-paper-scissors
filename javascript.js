@@ -1,4 +1,4 @@
- // declares a function (getComputerChoice), an array (choiceClass), and randomly selectes a number/array item
+ // declares a function (getComputerChoice), an array (choiceClass), and randomly selectes an array item
  
  function getComputerChoice () {
     let choiceClass = []
@@ -10,7 +10,7 @@
  }
     getComputerChoice();
 
-// declares a function named roundResults which declares the results based off conditional statements
+// declares a function named roundResults which declares the results using conditional statements
 
 function roundResults (playerSelection, computerSelection){
     if (playerSelection === computerSelection) {
