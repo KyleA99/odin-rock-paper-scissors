@@ -15,15 +15,15 @@
 function roundResults (playerSelection, computerSelection){
     if (playerSelection === computerSelection) {
         message = "Tie!";
-    } else if (playerSelection == "Rock" && computerSelection == "Paper") {
+    } else if (playerSelection == "rock" && computerSelection == "paper") {
         message = "You Lose!";
-    } else if (playerSelection == "Rock" && computerSelection == "Scissors") {
+    } else if (playerSelection == "rock" && computerSelection == "cissors") {
         message = "You Win!";
-    } else if (playerSelection == "Paper" && computerSelection == "Scissors") {
+    } else if (playerSelection == "paper" && computerSelection == "scissors") {
         message = "You Lose!";
-    } else if (playerSelection == "Paper" && computerSelection == "Rock") {
+    } else if (playerSelection == "paper" && computerSelection == "rock") {
         message = "You Win!";
-    } else if (playerSelection == "Scissors" && computerSelection == "Rock") {
+    } else if (playerSelection == "scissors" && computerSelection == "rock") {
         message = "You Lose!";
     } else {
         message = "You Win!";
@@ -31,9 +31,9 @@ function roundResults (playerSelection, computerSelection){
     console.log(message);
     return;
 }
-    playerSelection = "rock";
+    playerSelection = "paper";
     computerSelection = getComputerChoice();
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
-
+    
     roundResults(playerSelection, computerSelection);
