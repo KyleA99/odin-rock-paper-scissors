@@ -43,3 +43,7 @@ function roundResults (playerSelection, computerSelection){
     computerSelection = computerSelection.toLowerCase();
     
     roundResults(playerSelection, computerSelection);
+
+function game () {
+    
+}
