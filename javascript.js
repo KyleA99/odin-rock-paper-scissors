@@ -10,9 +10,9 @@
  }
     getComputerChoice();
 
-// declares a function named roundResults which declares the results using conditional statements
+// declares a function named playRound which declares the results using conditional statements
 
-function roundResults (playerSelection, computerSelection){
+function playRound (playerSelection, computerSelection){
     if (playerSelection === computerSelection) {
         message = "Tie!";
         winner = "Tie"
@@ -42,8 +42,12 @@ function roundResults (playerSelection, computerSelection){
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
     
-    roundResults(playerSelection, computerSelection);
+    playRound(playerSelection, computerSelection);
+
+// utilizes a function to call the results of playRound and utilizes a loop to determine the winner of a
+// 5 round game
 
 function game () {
-    
+    for ([initialExpression]; [conditionExpression]; [incrementExpression])
+    statement
 }
