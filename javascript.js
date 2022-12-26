@@ -48,6 +48,9 @@ function playRound (playerSelection, computerSelection){
 // 5 round game
 
 function game () {
-    for ([initialExpression]; [conditionExpression]; [incrementExpression])
-    statement
+    for (let i = 0; i < 5; i++)
+    {
+        // body of the loop
+        // satements we want to execute
+    }
 }
