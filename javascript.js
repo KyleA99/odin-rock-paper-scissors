@@ -14,44 +14,42 @@
 
 function playRound (playerSelection, computerSelection){
     if (playerSelection === computerSelection) {
-        message = "Tie!";
+        roundResults = "Tie!";
         winner = "Tie"
     } else if (playerSelection == "rock" && computerSelection == "paper") {
-        message = "You Lose!";
+        roundResults = "You lost this round!";
         winner = "Computer";
     } else if (playerSelection == "rock" && computerSelection == "cissors") {
-        message = "You Win!";
+        roundResults = "You won this round!";
         winner = "Player";
     } else if (playerSelection == "paper" && computerSelection == "scissors") {
-        message = "You Lose!";
+        roundResults = "You lost this round!";
         winner = "Computer";
     } else if (playerSelection == "paper" && computerSelection == "rock") {
-        message = "You Win!";
+        roundResults = "You won this round!";
         winner = "Player";
     } else if (playerSelection == "scissors" && computerSelection == "rock") {
-        message = "You Lose!";
+        roundResults = "You lost this round!";
         winner = "Computer";
     } else {
-        message = "You Win!";
+        roundResults = "You won this round!";
         winner = "Player";
     }
     return winner;
 }
-    playerSelection = "paper";
+    //  playerSelection = "paper";
     computerSelection = getComputerChoice();
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
     
     playRound(playerSelection, computerSelection);
 
-// utilizes a function to call the results of playRound and utilizes a loop to determine the winner of a
-// 5 round game
+// utilizes a function to call the results of playRound and utilizes a loop to determine the winner of a 5 round game
 
 function game () {
-    let numberWins = 0;
-    for (let i = 0; i < 5; ++i)
-    {
-        // body of the loop
-        // satements we want to execute
-    }
+    let numberRoundWins = 0;
+    for (let i = 0; i < 5; ++i) {
+        // if (playerScore = 5) {
+        //     gameResults = "You Won the Game!";
+        }
 }
