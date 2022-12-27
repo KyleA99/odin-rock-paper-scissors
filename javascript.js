@@ -37,7 +37,7 @@ function playRound (playerSelection, computerSelection){
     }
     return winner;
 }
-//  playerSelection = "paper";
+    playerSelection = "paper";
     computerSelection = getComputerChoice();
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
@@ -47,17 +47,20 @@ function playRound (playerSelection, computerSelection){
 // utilizes a function to call the results of playRound and utilizes a loop to determine the winner of a 5 round game
 
 function game () {
-    let numberRoundWins = 0;
+    let playerRoundWins = 0;
+    let computerRoundWins = 0;
     for (let i = 0; i < 5; ++i) {
-            if (playerScore > computerScore) {
-            gameResults = "You won the game!";
-        }   else if (playerScore < computerScore) {
-            gameResults = "You lost the game!";
-        }   else {
-            gameResults = "You tied, please play again!";
+        array1[i] > array2[i] ? playerRoundWins++ : null; //remove array 1 + 2 section with just output of playRound()?
+        array1[i] < array2[i] ? computerRoundWins++ : null;  //remove array 1 + 2 section with just output of playRound()?
+    }
+    if (playerRoundWins > computerRoundWins) {
+        gameResults = "You won the game!";
+    } else if (playerRoundWins < computerRoundWins) {
+        gameResults = "You lost the game!";
+    } else {
+        gameResults = "You tied, please play again!";
         }
-}
-}
+    }
 
 // need to return results of playRound into game() function
 // need to consider if there is one or more ties during 5 round game...
