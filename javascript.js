@@ -54,11 +54,11 @@ function game () {
         array1[i] < array2[i] ? computerRoundWins++ : null;  //remove array 1 + 2 section with just output of playRound()?
     }
     if (playerRoundWins > computerRoundWins) {
-        gameResults = "You won the game!";
+        gameResults = "${playerRoundWins}, ${computerRoundWins}: You won the game!";
     } else if (playerRoundWins < computerRoundWins) {
-        gameResults = "You lost the game!";
+        gameResults = "${playerRoundWins}, ${computerRoundWins}: You lost the game!";
     } else {
-        gameResults = "You tied, please play again!";
+        gameResults = "${playerRoundWins}, ${computerRoundWins}: You tied, please play again!";
         }
     }
 
