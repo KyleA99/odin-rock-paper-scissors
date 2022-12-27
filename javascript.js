@@ -19,7 +19,7 @@ function playRound (playerSelection, computerSelection){
     } else if (playerSelection == "rock" && computerSelection == "paper") {
         roundResults = "You lost this round!";
         winner = "Computer";
-    } else if (playerSelection == "rock" && computerSelection == "cissors") {
+    } else if (playerSelection == "rock" && computerSelection == "scissors") {
         roundResults = "You won this round!";
         winner = "Player";
     } else if (playerSelection == "paper" && computerSelection == "scissors") {
@@ -37,7 +37,7 @@ function playRound (playerSelection, computerSelection){
     }
     return winner;
 }
-    //  playerSelection = "paper";
+//  playerSelection = "paper";
     computerSelection = getComputerChoice();
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
@@ -49,7 +49,15 @@ function playRound (playerSelection, computerSelection){
 function game () {
     let numberRoundWins = 0;
     for (let i = 0; i < 5; ++i) {
-        // if (playerScore = 5) {
-        //     gameResults = "You Won the Game!";
+            if (playerScore > computerScore) {
+            gameResults = "You won the game!";
+        }   else if (playerScore < computerScore) {
+            gameResults = "You lost the game!";
+        }   else {
+            gameResults = "You tied, please play again!";
         }
 }
+}
+
+// need to return results of playRound into game() function
+// need to consider if there is one or more ties during 5 round game...
