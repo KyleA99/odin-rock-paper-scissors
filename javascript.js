@@ -13,7 +13,7 @@
 // declares a function named playRound which declares the results using conditional statements
 // utilizes a function to call the results of playRound and utilizes a loop to determine the winner of a 5 round game
 
-function playRound (playerSelection, computerSelection){
+function playRound (playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         roundResults = "Tie!";
         winner = "Tie"
@@ -65,5 +65,3 @@ function playRound (playerSelection, computerSelection){
     computerSelection = computerSelection.toLowerCase();
     
     playRound(playerSelection, computerSelection);
-
-// need to consider if there is one or more ties during 5 round game...
