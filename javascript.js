@@ -11,6 +11,7 @@
     getComputerChoice();
 
 // declares a function named playRound which declares the results using conditional statements
+// utilizes a function to call the results of playRound and utilizes a loop to determine the winner of a 5 round game
 
 function playRound (playerSelection, computerSelection){
     if (playerSelection === computerSelection) {
@@ -35,7 +36,23 @@ function playRound (playerSelection, computerSelection){
         roundResults = "You won this round!";
         winner = "Player";
     }
-    return winner;
+
+    function game () {
+        let playerRoundWins = 0;
+        let computerRoundWins = 0;
+        for (let i = 0; i < 5; ++i) {
+                array1[i] > array2[i] ? playerRoundWins++ : null; //remove array 1 + 2 section with just output of playRound()?
+                array1[i] < array2[i] ? computerRoundWins++ : null;  //remove array 1 + 2 section with just output of playRound()?
+        }
+        if (playerRoundWins > computerRoundWins) {
+            gameResults = "${playerRoundWins}, ${computerRoundWins}: You won the game!";
+        } else if (playerRoundWins < computerRoundWins) {
+            gameResults = "${playerRoundWins}, ${computerRoundWins}: You lost the game!";
+        } else {
+            gameResults = "${playerRoundWins}, ${computerRoundWins}: You tied, please play again!";
+            }
+        }
+            return winner;
 }
     playerSelection = "paper";
     computerSelection = getComputerChoice();
@@ -44,23 +61,4 @@ function playRound (playerSelection, computerSelection){
     
     playRound(playerSelection, computerSelection);
 
-// utilizes a function to call the results of playRound and utilizes a loop to determine the winner of a 5 round game
-
-function game () {
-    let playerRoundWins = 0;
-    let computerRoundWins = 0;
-    for (let i = 0; i < 5; ++i) {
-        array1[i] > array2[i] ? playerRoundWins++ : null; //remove array 1 + 2 section with just output of playRound()?
-        array1[i] < array2[i] ? computerRoundWins++ : null;  //remove array 1 + 2 section with just output of playRound()?
-    }
-    if (playerRoundWins > computerRoundWins) {
-        gameResults = "${playerRoundWins}, ${computerRoundWins}: You won the game!";
-    } else if (playerRoundWins < computerRoundWins) {
-        gameResults = "${playerRoundWins}, ${computerRoundWins}: You lost the game!";
-    } else {
-        gameResults = "${playerRoundWins}, ${computerRoundWins}: You tied, please play again!";
-        }
-    }
-
-// need to return results of playRound into game() function
 // need to consider if there is one or more ties during 5 round game...
