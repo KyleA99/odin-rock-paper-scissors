@@ -38,18 +38,23 @@ function playRound (playerSelection, computerSelection){
     }
 
     function game () {
-        let playerRoundWins = 0;
-        let computerRoundWins = 0;
+        let playerScore = 0;
+        let computerScore = 0;
         for (let i = 0; i < 5; ++i) {
-                array1[i] > array2[i] ? playerRoundWins++ : null; //remove array 1 + 2 section with just output of playRound()?
-                array1[i] < array2[i] ? computerRoundWins++ : null;  //remove array 1 + 2 section with just output of playRound()?
+                if (winner === "Player") {
+                    ++playerScore;
+                } else if (winner === "Computer") {
+                    ++computerScore;
+                } else {
+                // something for tie (game ends 2-2-1)
+                }
         }
-        if (playerRoundWins > computerRoundWins) {
-            gameResults = "${playerRoundWins}, ${computerRoundWins}: You won the game!";
+        if (playerScore > computerScore) {
+            gameResults = "${playerScore}, $computerScore}: You won the game!";
         } else if (playerRoundWins < computerRoundWins) {
-            gameResults = "${playerRoundWins}, ${computerRoundWins}: You lost the game!";
+            gameResults = "${playerScore}, ${computerScore}: You lost the game!";
         } else {
-            gameResults = "${playerRoundWins}, ${computerRoundWins}: You tied, please play again!";
+            gameResults = "${playerScore}, ${computerScore}: You tied, please play again!";
             }
         }
             return winner;
