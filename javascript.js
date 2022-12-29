@@ -1,6 +1,6 @@
  // declares a function (getComputerChoice), an array (choiceClass), and randomly selectes an array item
  
- function getComputerChoice () {
+function getComputerChoice () {
     let choiceClass = []
         choiceClass [0] = "Rock";
         choiceClass [1] = "Paper";
@@ -8,7 +8,7 @@
         let randomChoiceClass = Math.floor(Math.random() * choiceClass.length);
         return choiceClass[randomChoiceClass];
  }
-    getComputerChoice();
+getComputerChoice();
 
 // declares a function named playRound which declares the results using conditional statements
 // utilizes a function to call the results of playRound and utilizes a loop to determine the winner of a 5 round game
@@ -46,18 +46,18 @@ function playRound (playerSelection, computerSelection) {
                 } else if (winner === "Computer") {
                     ++computerScore;
                 } else {
-                // something for tie (game ends 2-2-1)
+                    // Do nothing.
                 }
         }
         if (playerScore > computerScore) {
-            gameResults = "${playerScore}, $computerScore}: You won the game!";
+            return ("${playerScore}, $computerScore}: You won the game!");
         } else if (playerRoundWins < computerRoundWins) {
-            gameResults = "${playerScore}, ${computerScore}: You lost the game!";
+            return ("${playerScore}, ${computerScore}: You lost the game!");
         } else {
-            gameResults = "${playerScore}, ${computerScore}: You tied, please play again!";
+            return ("${playerScore}, ${computerScore}: You tied, please play again!");
             }
         }
-            return winner;
+    game();
 }
     playerSelection = "paper";
     computerSelection = getComputerChoice();
@@ -65,3 +65,5 @@ function playRound (playerSelection, computerSelection) {
     computerSelection = computerSelection.toLowerCase();
     
     playRound(playerSelection, computerSelection);
+
+   // console.log(playRound(playerSelection, computerSelection)); ?
