@@ -50,11 +50,11 @@ function playRound (playerSelection, computerSelection) {
                 }
         }
         if (playerScore > computerScore) {
-            return ("${playerScore}, $computerScore}: You won the game!");
+            gameResults = ("${playerScore}, $computerScore}: You won the game!");
         } else if (playerScore < computerScore) {
-            return ("${playerScore}, ${computerScore}: You lost the game!");
+            gameResults = ("${playerScore}, ${computerScore}: You lost the game!");
         } else {
-            return ("${playerScore}, ${computerScore}: You tied, please play again!");
+            gameResults = ("${playerScore}, ${computerScore}: You tied, please play again!");
             }
         }
     game();
@@ -65,5 +65,4 @@ function playRound (playerSelection, computerSelection) {
     computerSelection = computerSelection.toLowerCase();
     
     playRound(playerSelection, computerSelection);
-
-   // console.log(playRound(playerSelection, computerSelection)); ?
+    console.log(gameResults)
