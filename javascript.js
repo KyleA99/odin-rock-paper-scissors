@@ -50,11 +50,11 @@ function playRound (playerSelection, computerSelection) {
                 }
         }
         if (playerScore > computerScore) {
-            gameResults = ("${playerScore}, $computerScore}: You won the game!");
+            gameResults = (`${playerScore}, ${computerScore}: You won the game!`);
         } else if (playerScore < computerScore) {
-            gameResults = ("${playerScore}, ${computerScore}: You lost the game!");
+            gameResults = (`${playerScore}, ${computerScore}: You lost the game!`);
         } else {
-            gameResults = ("${playerScore}, ${computerScore}: You tied, please play again!");
+            gameResults = (`${playerScore}, ${computerScore}: You tied, please play again!`);
             }
         }
     game();
