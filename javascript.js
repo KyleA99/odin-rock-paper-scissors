@@ -1,6 +1,3 @@
-playerSelection = getPlayerChoice();
-computerSelection = getComputerChoice().toLowerCase();
- 
 function getComputerChoice () {
     let choiceClass = []
         choiceClass [0] = "Rock";
@@ -17,8 +14,6 @@ function getPlayerChoice () {
 getPlayerChoice();
 
 function playRound (playerSelection, computerSelection) {
-    playerSelection = getPlayerChoice().toLowerCase();
-    computerSelection = getComputerChoice().toLowerCase();
     if (playerSelection === computerSelection) {
         roundResults = "Tie!";
         winner = "Tie"
@@ -43,6 +38,8 @@ function playRound (playerSelection, computerSelection) {
     }
 
     function game () {
+        playerSelection = getPlayerChoice().toLowerCase();
+        computerSelection = getComputerChoice().toLowerCase();
         let playerScore = 0;
         let computerScore = 0;
         for (let i = 0; i < 5; ++i) {
@@ -64,5 +61,8 @@ function playRound (playerSelection, computerSelection) {
         }
     game();
 }
+playerSelection = getPlayerChoice();
+computerSelection = getComputerChoice();
+
 playRound(playerSelection, computerSelection);
 console.log(gameResults)
