@@ -38,11 +38,11 @@ function playRound (playerSelection, computerSelection) {
     }
 
     function game () {
-        playerSelection = getPlayerChoice().toLowerCase();
-        computerSelection = getComputerChoice().toLowerCase();
         let playerScore = 0;
         let computerScore = 0;
         for (let i = 0; i < 5; ++i) {
+        playerSelection = getPlayerChoice().toLowerCase();
+        computerSelection = getComputerChoice().toLowerCase();
                 if (winner === "Player") {
                     ++playerScore;
                 } else if (winner === "Computer") {
