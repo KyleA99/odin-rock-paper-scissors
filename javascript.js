@@ -10,7 +10,14 @@ function getComputerChoice () {
  }
 getComputerChoice();
 
-// declares a function named playRound which declares the results using conditional statements
+// declares a function (getPlayerChoice) which creates a prompt in the console for the player's move
+
+function getPlayerChoice () {
+    return prompt("Please choose either rock, paper, or scissors.");
+}
+getPlayerChoice();
+
+// declares a function (playRound) which declares the results using conditional statements
 // utilizes a function to call the results of playRound and utilizes a loop to determine the winner of a 5 round game
 
 function playRound (playerSelection, computerSelection) {
@@ -59,7 +66,7 @@ function playRound (playerSelection, computerSelection) {
         }
     game();
 }
-    playerSelection = "paper";
+    playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
