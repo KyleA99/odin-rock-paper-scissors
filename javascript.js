@@ -11,7 +11,6 @@ getComputerChoice();
 function getPlayerChoice () {
     return prompt("Please choose either rock, paper, or scissors.");
 }
-getPlayerChoice();
 
 function playRound (playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
