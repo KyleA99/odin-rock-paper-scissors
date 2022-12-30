@@ -16,7 +16,7 @@ getPlayerChoice();
 function playRound (playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         roundResults = "Tie!";
-        winner = "Tie"
+        winner = "Tie";
     } else if (playerSelection == "rock" && computerSelection == "paper") {
         roundResults = "You lost this round!";
         winner = "Computer";
