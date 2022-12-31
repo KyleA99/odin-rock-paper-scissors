@@ -37,13 +37,10 @@ console.log(playRound(playerSelection, computerSelection));
 // this is calling the function as a param
 // console.log(playRound(getPlayerChoice(), computerSelection()));
 
-
 function game () {
     let playerScore = 0;
     let computerScore = 0;
     for (let i = 0; i < 5; ++i) {
-//     playerSelection = getPlayerChoice();
-//     computerSelection = getComputerChoice();
     if (playRound(playerSelection, computerSelection) === "You won this round!") {
         ++playerScore;
     } else if (playRound(playerSelection, computerSelection) === "You lost this round!") {
@@ -62,12 +59,5 @@ function game () {
 }
 //game();
 
-
-
-// playerSelection = getPlayerChoice();
-
 // playRound(playerSelection, computerSelection);
 // console.log(gameResults)
-
-
-//do not nest playRound() and game()
