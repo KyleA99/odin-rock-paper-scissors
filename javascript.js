@@ -29,12 +29,6 @@ function playRound (playerSelection, computerSelection) {
     }
 }
 
-// this is saving the result
-// console.log(playRound(playerSelection, computerSelection));
-
-// this is calling the function as a parameter
-// console.log(playRound(getPlayerChoice(), computerSelection()));
-
 function game () {
     let playerScore = 0;
     let computerScore = 0;
