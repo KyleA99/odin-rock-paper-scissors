@@ -57,7 +57,4 @@ function game () {
     gameResults = (`${playerScore}, ${computerScore}: You tied, please play again!`);
     }
 }
-//game();
-
-// playRound(playerSelection, computerSelection);
 // console.log(gameResults)
