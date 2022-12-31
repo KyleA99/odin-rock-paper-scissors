@@ -30,31 +30,31 @@ function playRound (playerSelection, computerSelection) {
 }
 
 // this is saving the result
-const playerSelection = getPlayerChoice().toLowerCase();
-const computerSelection = getComputerChoice().toLowerCase();
-console.log(playRound(playerSelection, computerSelection));
+// console.log(playRound(playerSelection, computerSelection));
 
-// this is calling the function as a param
+// this is calling the function as a parameter
 // console.log(playRound(getPlayerChoice(), computerSelection()));
 
 function game () {
     let playerScore = 0;
     let computerScore = 0;
     for (let i = 0; i < 5; ++i) {
-    if (playRound(playerSelection, computerSelection) === "You won this round!") {
-        ++playerScore;
-    } else if (playRound(playerSelection, computerSelection) === "You lost this round!") {
-        ++computerScore;
-    } else {
-    // Do nothing.
-    }
+        const playerSelection = getPlayerChoice().toLowerCase();
+        const computerSelection = getComputerChoice().toLowerCase();
+        if (playRound(playerSelection, computerSelection) === "You won this round!") {
+            ++playerScore;
+        } else if (playRound(playerSelection, computerSelection) === "You lost this round!") {
+            ++computerScore;
+        } else {
+        // Do nothing.
+        }
     }
     if (playerScore > computerScore) {
-        gameResults = (`${playerScore}, ${computerScore}: You won the game!`);
+        return (`${playerScore}, ${computerScore}: You won the game!`);
     } else if (playerScore < computerScore) {
-        gameResults = (`${playerScore}, ${computerScore}: You lost the game!`);
+        return (`${playerScore}, ${computerScore}: You lost the game!`);
     } else {
-    gameResults = (`${playerScore}, ${computerScore}: You tied, please play again!`);
+        return (`${playerScore}, ${computerScore}: You tied, please play again!`);
     }
 }
-// console.log(gameResults)
+console.log(game())
