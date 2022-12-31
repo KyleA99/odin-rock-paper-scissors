@@ -28,35 +28,42 @@ function playRound (playerSelection, computerSelection) {
         return "You won this round!";
     }
 }
+
+// this is saving the result
 const playerSelection = getPlayerChoice().toLowerCase();
 const computerSelection = getComputerChoice().toLowerCase();
 console.log(playRound(playerSelection, computerSelection));
 
+// this is calling the function as a param
+// console.log(playRound(getPlayerChoice(), computerSelection()));
 
 
-// function game () {
-//     let playerScore = 0;
-//     let computerScore = 0;
-//     for (let i = 0; i < 1; ++i) {
+function game () {
+    let playerScore = 0;
+    let computerScore = 0;
+    for (let i = 0; i < 5; ++i) {
 //     playerSelection = getPlayerChoice();
 //     computerSelection = getComputerChoice();
-//             if (winner === "Player") {
-//                 ++playerScore;
-//             } else if (winner === "Computer") {
-//                 ++computerScore;
-//             } else {
-//                 // Do nothing.
-//             }
-//         }
-//         if (playerScore > computerScore) {
-//             gameResults = (`${playerScore}, ${computerScore}: You won the game!`);
-//         } else if (playerScore < computerScore) {
-//             gameResults = (`${playerScore}, ${computerScore}: You lost the game!`);
-//         } else {
-//             gameResults = (`${playerScore}, ${computerScore}: You tied, please play again!`);
-//             }
-//         }
-//     game();
+    if (playRound(playerSelection, computerSelection) === "You won this round!") {
+        ++playerScore;
+    } else if (playRound(playerSelection, computerSelection) === "You lost this round!") {
+        ++computerScore;
+    } else {
+    // Do nothing.
+    }
+    }
+    if (playerScore > computerScore) {
+        gameResults = (`${playerScore}, ${computerScore}: You won the game!`);
+    } else if (playerScore < computerScore) {
+        gameResults = (`${playerScore}, ${computerScore}: You lost the game!`);
+    } else {
+    gameResults = (`${playerScore}, ${computerScore}: You tied, please play again!`);
+    }
+}
+//game();
+
+
+
 // playerSelection = getPlayerChoice();
 
 // playRound(playerSelection, computerSelection);
