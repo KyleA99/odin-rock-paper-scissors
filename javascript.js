@@ -1,10 +1,10 @@
 function getComputerChoice () {
-    let choiceClass = []
-        choiceClass [0] = "Rock";
-        choiceClass [1] = "Paper";
-        choiceClass [2] = "Scissors";
-        let randomChoiceClass = Math.floor(Math.random() * choiceClass.length);
-        return choiceClass[randomChoiceClass];
+    let choiceClass = [];
+    choiceClass [0] = "Rock";
+    choiceClass [1] = "Paper";
+    choiceClass [2] = "Scissors";
+    let randomChoiceClass = Math.floor(Math.random() * choiceClass.length);
+    return choiceClass[randomChoiceClass];
  }
 
 function getPlayerChoice () {
