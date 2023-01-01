@@ -32,13 +32,13 @@ function playRound (playerSelection, computerSelection) {
 function game () {
     let playerScore = 0;
     let computerScore = 0;
-    for (let i = 0; i < 5; ++i) {
+    for (let i = 0; i < 5; i++) {
         const playerSelection = getPlayerChoice().toLowerCase();
         const computerSelection = getComputerChoice().toLowerCase();
         if (playRound(playerSelection, computerSelection) === "You won this round!") {
-            ++playerScore;
+            playerScore++;
         } else if (playRound(playerSelection, computerSelection) === "You lost this round!") {
-            ++computerScore;
+            computerScore++;
         } else {
         // Do nothing.
         }
