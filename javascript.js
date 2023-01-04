@@ -12,20 +12,19 @@ function getPlayerChoice () {
 }
 
 function playRound (playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) {
+    switch(playerSelection + computerSelection) {
+        case "rockscissors":
+        case "paperrock":
+        case "scissorspaper":
+        return "You won this round!";
+        // break;
+        case "rockpaper":
+        case "paperscissors":
+        case "scissorsrock":
+        return "You lost this round!";
+        // break;
+        default:
         return "Tie!";
-    } else if (playerSelection == "rock" && computerSelection == "paper") {
-        return "You lost this round!";
-    } else if (playerSelection == "rock" && computerSelection == "scissors") {
-        return "You won this round!";
-    } else if (playerSelection == "paper" && computerSelection == "scissors") {
-        return "You lost this round!";
-    } else if (playerSelection == "paper" && computerSelection == "rock") {
-        return "You won this round!";
-    } else if (playerSelection == "scissors" && computerSelection == "rock") {
-        return "You lost this round!";
-    } else {
-        return "You won this round!";
     }
 }
 
