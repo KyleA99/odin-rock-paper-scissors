@@ -12,7 +12,7 @@ function getPlayerChoice () {
 }
 
 function playRound (playerSelection, computerSelection) {
-  switch(playerSelection + computerSelection) {
+  switch (playerSelection + computerSelection) {
     case "rockscissors":
     case "paperrock":
     case "scissorspaper":
