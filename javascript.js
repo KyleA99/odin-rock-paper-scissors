@@ -1,3 +1,7 @@
+/**
+ * Generates a randomized choiceClass from the array using the Math.random method
+ * @returns {string} choiceClass values that have been randomly selected
+ */
 function getComputerChoice () {
   let choiceClass = [];
   choiceClass [0] = "Rock";
@@ -7,10 +11,20 @@ function getComputerChoice () {
   return choiceClass[randomChoiceClass];
 }
 
+/**
+ * Prompts the player for their "move"
+ * @returns {string} The player's response to the prompt
+ */
 function getPlayerChoice () {
   return prompt("Please choose either rock, paper, or scissors.");
 }
 
+/**
+ * Evaluates the winner of a single round using a switch case statement 
+ * @param {string} playerSelection Calls the value for the player's move
+ * @param {string} computerSelection Calls the value for the computer's move
+ * @returns {string} A string stating the winner of the round
+ */
 function playRound (playerSelection, computerSelection) {
   switch (playerSelection + computerSelection) {
     case "rockscissors":
@@ -28,6 +42,10 @@ function playRound (playerSelection, computerSelection) {
   }
 }
 
+/**
+ * Calls the playRound function, increments the player and computer scores, and determines the winner for a 5 round game
+ * @returns {string} The score of a game using template literals and announces the game results
+ */
 function game () {
   let playerScore = 0;
   let computerScore = 0;
