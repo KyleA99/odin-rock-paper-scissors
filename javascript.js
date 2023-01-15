@@ -2,7 +2,7 @@
  * Generates a randomized choiceClass from the array using the Math.random method
  * @returns {string} choiceClass values that have been randomly selected
  */
-function getComputerChoice () {
+function getComputerChoice() {
   let choiceClass = [];
   choiceClass [0] = "Rock";
   choiceClass [1] = "Paper";
@@ -11,13 +11,17 @@ function getComputerChoice () {
   return choiceClass[randomChoiceClass];
 }
 
-/**
- * Prompts the player for their "move"
- * @returns {string} The player's response to the prompt
- */
-function getPlayerChoice () {
-  return prompt("Please choose either rock, paper, or scissors.");
-}
+// declares a constant called buttons which is a node list (looks/behaves similar to an array)
+const buttons = document.querySelectorAll("button");
+// forEach method iterates through each button
+buttons.forEach((button) => {
+// for each button we add a click listener which calls the playRound function and passes the "click" event objects through playRound
+  button.addEventListener("click", () => {
+    console.log(button.id)
+    // alert(button.id);
+    playRound(button.id, computerSelection);
+  });
+});
 
 /**
  * Evaluates the winner of a single round using a switch case statement 
@@ -25,8 +29,8 @@ function getPlayerChoice () {
  * @param {string} computerSelection Calls the value for the computer's move
  * @returns {string} A string stating the winner of the round
  */
-function playRound (playerSelection, computerSelection) {
-  switch (playerSelection + computerSelection) {
+function playRound(playerSelection, computerSelection) {
+  switch(playerSelection + computerSelection) {
     case "rockscissors":
     case "paperrock":
     case "scissorspaper":
@@ -46,26 +50,26 @@ function playRound (playerSelection, computerSelection) {
  * Calls the playRound function, increments the player and computer scores, and determines the winner for a 5 round game
  * @returns {string} The score of a game using template literals and announces the game results
  */
-function game () {
-  let playerScore = 0;
-  let computerScore = 0;
-  for (let i = 0; i < 5; i++) {
-    const playerSelection = getPlayerChoice().toLowerCase();
-    const computerSelection = getComputerChoice().toLowerCase();
-    if (playRound(playerSelection, computerSelection) === "You won this round!") {
-      playerScore++;
-    } else if (playRound(playerSelection, computerSelection) === "You lost this round!") {
-      computerScore++;
-    } else {
-    // Do nothing.
-    }
-  }
-  if (playerScore > computerScore) {
-    return (`${playerScore}, ${computerScore}: You won the game!`);
-  } else if (playerScore < computerScore) {
-    return (`${playerScore}, ${computerScore}: You lost the game!`);
-  } else {
-    return (`${playerScore}, ${computerScore}: You tied, please play again!`);
-  }
-}
-console.log(game())
+// function game() {
+//   let playerScore = 0;
+//   let computerScore = 0;
+//   for (let i = 0; i < 5; i++) {
+//     const playerSelection = getPlayerChoice().toLowerCase();
+//     const computerSelection = getComputerChoice().toLowerCase();
+//     if (playRound(playerSelection, computerSelection) === "You won this round!") {
+//       playerScore++;
+//     } else if (playRound(playerSelection, computerSelection) === "You lost this round!") {
+//       computerScore++;
+//     } else {
+//     // Do nothing.
+//     }
+//   }
+//   if (playerScore > computerScore) {
+//     return (`${playerScore}, ${computerScore}: You won the game!`);
+//   } else if (playerScore < computerScore) {
+//     return (`${playerScore}, ${computerScore}: You lost the game!`);
+//   } else {
+//     return (`${playerScore}, ${computerScore}: You tied, please play again!`);
+//   }
+// }
+// console.log(game())
