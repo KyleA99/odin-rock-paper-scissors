@@ -17,11 +17,47 @@ const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
 // for each button we add a click listener which calls the playRound function and passes the "click" event objects through playRound
   button.addEventListener("click", () => {
-    console.log(button.id)
-    // alert(button.id);
+    alert(button.id);
     playRound(button.id, computerSelection);
+    console.log(playRound(button.id, computerSelection))
   });
 });
+
+// selects the #results-container
+const container = document.querySelector("#results-container");
+
+// a <div> with a black border and blue background color 
+const shellDiv = document.createElement("div");
+shellDiv.classList.add("shellDivContent");
+shellDiv.style.border = "solid";
+shellDiv.style.margin = "12px";
+shellDiv.style.backgroundColor = "blue";
+
+// a <h1> announcing what the <div> contains
+const shellHeader = document.createElement("h1");
+shellHeader.classList.add("shellHeaderContent");
+shellHeader.textContent = "The results are of the round are:";
+shellHeader.style.color = "black";
+
+shellDiv.appendChild(shellHeader);
+
+// a <p> that announces the score”
+const scoreParagraph = document.createElement("p");
+scoreParagraph.classList.add("scoreParagraphContent");
+scoreParagraph.textContent = "The score (player - computer - tie) is: x - x - x";
+scoreParagraph.style.color = "white";
+
+// a <p> that announces the game results”
+const resultsParagraph = document.createElement("p");
+resultsParagraph.classList.add("resultsParagraphContent");
+resultsParagraph.textContent = "The winner is: xxx !";
+resultsParagraph.style.color = "white";
+
+shellDiv.appendChild(scoreParagraph);
+
+shellDiv.appendChild(resultsParagraph);
+
+container.appendChild(shellDiv);
 
 /**
  * Evaluates the winner of a single round using a switch case statement 
@@ -54,8 +90,8 @@ function playRound(playerSelection, computerSelection) {
 //   let playerScore = 0;
 //   let computerScore = 0;
 //   for (let i = 0; i < 5; i++) {
-//     const playerSelection = getPlayerChoice().toLowerCase();
-//     const computerSelection = getComputerChoice().toLowerCase();
+// const playerSelection = getPlayerChoice.toLowerCase();
+    const computerSelection = getComputerChoice().toLowerCase();
 //     if (playRound(playerSelection, computerSelection) === "You won this round!") {
 //       playerScore++;
 //     } else if (playRound(playerSelection, computerSelection) === "You lost this round!") {
