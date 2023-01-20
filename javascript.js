@@ -1,9 +1,11 @@
 let playerScore = 0;
 let computerScore = 0;
-
+// Initializing variables with the output expected to be strings
 let playerSelection = "";
-let computerSelection = getComputerChoice();
-// console.log(computerSelection);
+let computerSelection = "";
+
+// selects the #results-container
+const container = document.querySelector("#results-container");
 
 /**
  * Generates a randomized choiceClass from the array using the Math.random method
@@ -25,40 +27,14 @@ buttons.forEach((button) => {
   button.addEventListener("click", () => {
     computerSelection = getComputerChoice();
     // this is the function that the events iterate through
-    // playRound(button.id, computerSelection);
+    // playRound(button.id, computerSelection); // thought this was needed - check syntax with false statement
     let result = playRound(button.id, computerSelection);
     // console.log(playRound(button.id, computerSelection));
     let displayText = game(result);
-    console.log(displayText);
+    scoreParagraph.textContent = displayText;
+    // console.log(displayText);
   });
 });
-
-// selects the #results-container
-const container = document.querySelector("#results-container");
-
-// a <div> with a black border and blue background color 
-const shellDiv = document.createElement("div");
-shellDiv.classList.add("shellDivContent");
-shellDiv.style.border = "solid";
-shellDiv.style.margin = "12px";
-shellDiv.style.backgroundColor = "blue";
-
-// a <h1> announcing what the <div> contains
-const shellHeader = document.createElement("h1");
-shellHeader.classList.add("shellHeaderContent");
-shellHeader.textContent = "The results are:";
-shellHeader.style.color = "black";
-
-shellDiv.appendChild(shellHeader);
-
-// a <p> that announces the score
-const scoreParagraph = document.createElement("p");
-scoreParagraph.classList.add("scoreParagraphContent");
-// scoreParagraph.textContent = game();
-scoreParagraph.style.color = "white";
-
-shellDiv.appendChild(scoreParagraph);
-container.appendChild(shellDiv);
 
 /**
  * Evaluates the winner of a single round using a switch case statement 
@@ -105,3 +81,27 @@ function game(result) {
   }
 }
 // console.log(game());
+
+// a <div> with a black border and blue background color 
+const shellDiv = document.createElement("div");
+shellDiv.classList.add("shellDivContent");
+shellDiv.style.border = "solid";
+shellDiv.style.margin = "12px";
+shellDiv.style.backgroundColor = "blue";
+
+// a <h1> announcing what the <div> contains
+const shellHeader = document.createElement("h1");
+shellHeader.classList.add("shellHeaderContent");
+shellHeader.textContent = "The results are:";
+shellHeader.style.color = "black";
+
+shellDiv.appendChild(shellHeader);
+
+// a <p> that announces the score
+scoreParagraph = document.createElement("p");
+scoreParagraph.classList.add("scoreParagraphContent");
+scoreParagraph.style.color = "white";
+
+shellDiv.appendChild(scoreParagraph);
+
+container.appendChild(shellDiv);
