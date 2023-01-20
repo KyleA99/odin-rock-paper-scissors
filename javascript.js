@@ -1,5 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
+let tieScore = 0;
+
 // Initializing variables with the output expected to be strings
 let playerSelection = "";
 let computerSelection = "";
@@ -69,15 +71,15 @@ function game(result) {
   } else if (result === "You lost this round!") {
     computerScore++;
   } else {
-    // Do nothing.
+    tieScore++;
   }
   
   if (playerScore > computerScore) {
-    return (`${playerScore}, ${computerScore}: You won the game!`);
+    return (`The score is currently: ${playerScore}, ${computerScore}, ${tieScore}: You are currently winning!`);
   } else if (playerScore < computerScore) {
-    return (`${playerScore}, ${computerScore}: You lost the game!`);
+    return (`The score is currently: ${playerScore}, ${computerScore}, ${tieScore}: You are currently losing!`);
   } else {
-    return (`${playerScore}, ${computerScore}: You tied, please play again!`);
+    return (`The score is currently: ${playerScore}, ${computerScore}, ${tieScore}: The game is currently tied, continue playing!`);
   }
 }
 // console.log(game());
