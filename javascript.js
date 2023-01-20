@@ -1,8 +1,8 @@
 let playerScore = 0;
 let computerScore = 0;
 
-let playerSelection = "click";
-let computerSelection = getComputerChoice().toLowerCase();
+let playerSelection = "";
+let computerSelection = getComputerChoice();
 // console.log(computerSelection);
 
 /**
@@ -10,10 +10,7 @@ let computerSelection = getComputerChoice().toLowerCase();
  * @returns {string} choiceClass values that have been randomly selected
  */
 function getComputerChoice() {
-  let choiceClass = [];
-  choiceClass [0] = "Rock";
-  choiceClass [1] = "Paper";
-  choiceClass [2] = "Scissors";
+  let choiceClass = ["rock", "paper", "scissors"];
   let randomChoiceClass = Math.floor(Math.random() * choiceClass.length);
   // console.log(choiceClass[randomChoiceClass]);
   return choiceClass[randomChoiceClass];
@@ -26,12 +23,13 @@ const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
 // for each button we add a click listener which calls the playRound function and passes the "click" event objects through playRound
   button.addEventListener("click", () => {
-    computerSelection = getComputerChoice().toLowerCase();
+    computerSelection = getComputerChoice();
     // this is the function that the events iterate through
-    playRound(button.id, computerSelection);
-    // console.log(button.id);
-    // console.log(computerSelection);
-    console.log(playRound(button.id, computerSelection));
+    // playRound(button.id, computerSelection);
+    let result = playRound(button.id, computerSelection);
+    // console.log(playRound(button.id, computerSelection));
+    let displayText = game(result);
+    console.log(displayText);
   });
 });
 
@@ -56,11 +54,10 @@ shellDiv.appendChild(shellHeader);
 // a <p> that announces the score
 const scoreParagraph = document.createElement("p");
 scoreParagraph.classList.add("scoreParagraphContent");
-scoreParagraph.textContent = game();
+// scoreParagraph.textContent = game();
 scoreParagraph.style.color = "white";
 
 shellDiv.appendChild(scoreParagraph);
-
 container.appendChild(shellDiv);
 
 /**
@@ -84,16 +81,16 @@ function playRound(playerSelection, computerSelection) {
     default:
     return "Tie!";
   }
-} // console.log(playRound(playerSelection, computerSelection));
+}
 
 /**
  * Calls the playRound function, increments the player and computer scores, and determines the winner for a 5 round game
  * @returns {string} The score of a game using template literals and announces the game results
  */
-function game() {
-  if (playRound(playerSelection, computerSelection) === "You won this round!") {
+function game(result) {
+  if (result === "You won this round!") {
     playerScore++;
-  } else if (playRound(playerSelection, computerSelection) === "You lost this round!") {
+  } else if (result === "You lost this round!") {
     computerScore++;
   } else {
     // Do nothing.
