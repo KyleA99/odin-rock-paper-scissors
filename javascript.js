@@ -28,8 +28,6 @@ buttons.forEach((button) => {
 // for each button we add a click listener which calls the playRound function and passes the "click" event objects through playRound
   button.addEventListener("click", () => {
     computerSelection = getComputerChoice();
-    // this is the function that the events iterate through
-    // playRound(button.id, computerSelection); // thought this was needed - check syntax with false statement
     let result = playRound(button.id, computerSelection);
     // console.log(playRound(button.id, computerSelection));
     let displayText = game(result);
