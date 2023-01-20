@@ -20,7 +20,7 @@ function getComputerChoice() {
   return choiceClass[randomChoiceClass];
 }
 
-// declares a constant called buttons which is a node list (looks/behaves similar to an array)
+// Declares a constant called buttons which is a node list (looks/behaves similar to an array)
 const buttons = document.querySelectorAll("button");
 
 // forEach method is used to iterate through each button
