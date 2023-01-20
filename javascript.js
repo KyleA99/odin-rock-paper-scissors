@@ -6,7 +6,7 @@ let tieScore = 0;
 let playerSelection = "";
 let computerSelection = "";
 
-// selects the #results-container
+// Selects the #results-container
 const container = document.querySelector("#results-container");
 
 /**
@@ -25,7 +25,7 @@ const buttons = document.querySelectorAll("button");
 
 // forEach method is used to iterate through each button
 buttons.forEach((button) => {
-// for each button we add a click listener which calls the playRound function and passes the "click" event objects through playRound
+// For each button we add a click listener which calls the playRound function and passes the "click" event objects through playRound
   button.addEventListener("click", () => {
     computerSelection = getComputerChoice();
     let result = playRound(button.id, computerSelection);
@@ -82,14 +82,14 @@ function game(result) {
 }
 // console.log(game());
 
-// a <div> with a black border and blue background color 
+// A <div> with a black border and blue background color 
 const shellDiv = document.createElement("div");
 shellDiv.classList.add("shellDivContent");
 shellDiv.style.border = "solid";
 shellDiv.style.margin = "12px";
 shellDiv.style.backgroundColor = "blue";
 
-// a <h1> announcing what the <div> contains
+// A <h1> announcing what the <div> contains
 const shellHeader = document.createElement("h1");
 shellHeader.classList.add("shellHeaderContent");
 shellHeader.textContent = "The results are:";
@@ -97,7 +97,7 @@ shellHeader.style.color = "black";
 
 shellDiv.appendChild(shellHeader);
 
-// a <p> that announces the score
+// A <p> that announces the score
 scoreParagraph = document.createElement("p");
 scoreParagraph.classList.add("scoreParagraphContent");
 scoreParagraph.style.color = "white";
