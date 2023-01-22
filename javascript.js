@@ -5,9 +5,10 @@ let tieScore = 0;
 // Initializing variables with the output expected to be strings
 let playerSelection = "";
 let computerSelection = "";
+let playRoundResults = "";
 
 // Selects the #results-container
-const container = document.querySelector("#results-container");
+// const container = document.querySelector("#results-container");
 
 /**
  * Generates a randomized choiceClass from the array using the Math.random method
@@ -30,6 +31,10 @@ buttons.forEach((button) => {
     computerSelection = getComputerChoice();
     let result = playRound(button.id, computerSelection);
     // console.log(playRound(button.id, computerSelection));
+
+    let displayRoundResults = playRound(playerSelection, computerSelection);
+    roundResults.textContent = displayRoundResults;
+
     let displayText = game(result);
     scoreParagraph.textContent = displayText;
     // console.log(displayText);
@@ -47,15 +52,26 @@ function playRound(playerSelection, computerSelection) {
     case "rockscissors":
     case "paperrock":
     case "scissorspaper":
-    return "You won this round!";
+    return "Win";
     // break;
     case "rockpaper":
     case "paperscissors":
     case "scissorsrock":
-    return "You lost this round!";
+    return "Lose";
     // break;
     default:
-    return "Tie!";
+    return "Tie";
+  }
+
+
+  // need to leave return statements in playRoun(playerSelection, computerSelection) and create a new function
+  // with conditionals below - to be used for roundScore DOM display
+  if (playRoundResults === "Win" ) {
+    return ("You won this round!")
+  } else if (playRoundResults === "Lose") {
+    return ("You lost this round!")
+  } else {
+    return ("Tie!")
   }
 }
 
@@ -64,20 +80,20 @@ function playRound(playerSelection, computerSelection) {
  * @returns {string} The score of a game using template literals and announces the game results
  */
 function game(result) {
-  if (result === "You won this round!") {
+  if (result === "Win") {
     playerScore++;
-  } else if (result === "You lost this round!") {
+  } else if (result === "Lose") {
     computerScore++;
   } else {
     tieScore++;
   }
   
   if (playerScore > computerScore) {
-    return (`The score is currently: ${playerScore}, ${computerScore}, ${tieScore}: You are currently winning!`);
+    return (`The score is: ${playerScore}, ${computerScore}, ${tieScore}: You are currently winning!`);
   } else if (playerScore < computerScore) {
-    return (`The score is currently: ${playerScore}, ${computerScore}, ${tieScore}: You are currently losing!`);
+    return (`The score is: ${playerScore}, ${computerScore}, ${tieScore}: You are currently losing!`);
   } else {
-    return (`The score is currently: ${playerScore}, ${computerScore}, ${tieScore}: The game is currently tied, continue playing!`);
+    return (`The score is: ${playerScore}, ${computerScore}, ${tieScore}: The game is currently tied, continue playing!`);
   }
 }
 // console.log(game());
@@ -89,13 +105,21 @@ shellDiv.style.border = "solid";
 shellDiv.style.margin = "12px";
 shellDiv.style.backgroundColor = "blue";
 
-// A <h1> announcing what the <div> contains
+// A <h1> announcing the rules
 const shellHeader = document.createElement("h1");
 shellHeader.classList.add("shellHeaderContent");
-shellHeader.textContent = "The results are:";
+shellHeader.textContent = "The first one to reach a score of 5 wins!";
 shellHeader.style.color = "black";
 
 shellDiv.appendChild(shellHeader);
+
+// A <h5> that announces the results of the most recent round
+roundResults = document.createElement("h4");
+roundResults.classList.add("roundResultsContent");
+roundResults.style.color = "white";
+
+shellDiv.appendChild(roundResults);
+container.appendChild(shellDiv);
 
 // A <p> that announces the score
 scoreParagraph = document.createElement("p");
@@ -103,5 +127,13 @@ scoreParagraph.classList.add("scoreParagraphContent");
 scoreParagraph.style.color = "white";
 
 shellDiv.appendChild(scoreParagraph);
-
 container.appendChild(shellDiv);
+
+// display round result: either win, lose, tie
+// current score : x,x,x you are currently winning or currently losing
+
+//separate game() functions so each conditional is it's own function
+
+// reset game once player or computer reaches score of 5 and display who won series
+
+// merge branches
