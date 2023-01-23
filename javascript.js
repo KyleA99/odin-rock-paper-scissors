@@ -7,7 +7,7 @@ let playerSelection = "";
 let computerSelection = "";
 let playRoundResults = "";
 
-// Selects the #results-container
+// Selects the #results-container - not actually using this...
 // const container = document.querySelector("#results-container");
 
 /**
@@ -32,7 +32,7 @@ buttons.forEach((button) => {
     let result = playRound(button.id, computerSelection);
     // console.log(playRound(button.id, computerSelection));
 
-    let displayRoundResults = playRound(playerSelection, computerSelection);
+    let displayRoundResults = roundScore(result);
     roundResults.textContent = displayRoundResults;
 
     let displayText = game(result);
@@ -62,18 +62,18 @@ function playRound(playerSelection, computerSelection) {
     default:
     return "Tie";
   }
+}
 
-
-  // need to leave return statements in playRoun(playerSelection, computerSelection) and create a new function
-  // with conditionals below - to be used for roundScore DOM display
-  if (playRoundResults === "Win" ) {
+  function roundScore(result) {
+    // result = playRound(playerSelection, computerSelection);
+  if (result === "Win") {
     return ("You won this round!")
-  } else if (playRoundResults === "Lose") {
+  } else if (result === "Lose") {
     return ("You lost this round!")
   } else {
     return ("Tie!")
   }
-}
+}  // console.log(roundResults(result));
 
 /**
  * Calls the playRound function, increments the player and computer scores, and determines the winner for a 5 round game
@@ -130,7 +130,6 @@ shellDiv.appendChild(scoreParagraph);
 container.appendChild(shellDiv);
 
 // display round result: either win, lose, tie
-// current score : x,x,x you are currently winning or currently losing
 
 //separate game() functions so each conditional is it's own function
 
