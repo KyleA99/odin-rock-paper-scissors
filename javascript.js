@@ -38,6 +38,10 @@ buttons.forEach((button) => {
     let displayText = game(result);
     scoreParagraph.textContent = displayText;
     // console.log(displayText);
+
+    // let displayChampionResults = champion(playerScore, computerScore);
+    // championResults.textContent = displayChampionResults;
+    // console.log(displayChampionResults);
   });
 });
 
@@ -73,7 +77,8 @@ function playRound(playerSelection, computerSelection) {
   } else {
     return ("Tie!")
   }
-}  // console.log(roundResults(result));
+}  
+// console.log(roundResults(result));
 
 /**
  * Calls the playRound function, increments the player and computer scores, and determines the winner for a 5 round game
@@ -87,16 +92,26 @@ function game(result) {
   } else {
     tieScore++;
   }
-  
+  // console.log(playerScore)
+
   if (playerScore > computerScore) {
-    return (`The score is: ${playerScore}, ${computerScore}, ${tieScore}: You are currently winning!`);
+    return (`The score (user, computer, tie) is: ${playerScore}, ${computerScore}, ${tieScore}`);
   } else if (playerScore < computerScore) {
-    return (`The score is: ${playerScore}, ${computerScore}, ${tieScore}: You are currently losing!`);
+    return (`The score (user, computer, tie) is: ${playerScore}, ${computerScore}, ${tieScore}`);
   } else {
-    return (`The score is: ${playerScore}, ${computerScore}, ${tieScore}: The game is currently tied, continue playing!`);
+    return (`The score (user, computer, tie) is: ${playerScore}, ${computerScore}, ${tieScore}`);
   }
 }
 // console.log(game());
+
+// function champion(playerScore, computerScore) {
+  //playerScore and computerScore is only taking the "0" we have declared globally. need to set value in block scope
+//   if (playerScore === "5" && computerScore < "5") {
+//     return ("You are the champion!");
+//   } else if (computerScore === "5" && playerScore < "5") {
+//     return ("You lost the game!")
+//   }
+// } 
 
 // A <div> with a black border and blue background color 
 const shellDiv = document.createElement("div");
@@ -129,10 +144,13 @@ scoreParagraph.style.color = "white";
 shellDiv.appendChild(scoreParagraph);
 container.appendChild(shellDiv);
 
-// display round result: either win, lose, tie
+// A <h5> that announces the champion
+championResults = document.createElement("h5");
+championResults.classList.add("championResultsContent");
+championResults.style.color = "red";
 
-//separate game() functions so each conditional is it's own function
+shellDiv.appendChild(championResults);
+container.appendChild(shellDiv);
 
-// reset game once player or computer reaches score of 5 and display who won series
-
+//add documentation
 // merge branches
