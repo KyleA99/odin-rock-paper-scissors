@@ -7,7 +7,6 @@ let playerSelection = "";
 let computerSelection = "";
 let playRoundResult = "";
 let playRoundResults = "";
-let seriesScore = "";
 
 // Selects the #results-container - not actually using this...
 // const container = document.querySelector("#results-container");
@@ -42,9 +41,9 @@ buttons.forEach((button) => {
     scoreParagraph.textContent = displayText;
     // console.log(displayText);
 
-    let displaySeriesResult = seriesResult();
-    seriesResult.textContent = displaySeriesResult;
-    console.log(displaySeriesWinner);
+    let displaySeriesResults = seriesWinner(playerScore, computerScore);
+    seriesResults.textContent = displaySeriesResults;
+    // console.log(displaySeriesWinner);
   });
 });
 
@@ -101,7 +100,7 @@ function roundScore(result) {
  * @returns {string} The score of a game using template literals and announces the game results
  */
 function game(result) {
-  for (let i = 0; i < 5; i++) {
+  // for (let i = 0; i < 5; i++) {
   if (result === "Win") {
       playerScore++;
     } else if (result === "Lose") {
@@ -109,7 +108,7 @@ function game(result) {
     } else {
       tieScore++;
     }
-  }
+  // }
   // console.log(playerScore)
 
   if (playerScore > computerScore) {
@@ -122,17 +121,17 @@ function game(result) {
 }
 // console.log(game());
 
-function seriesResult() {
-  seriesScore = game(); // How do I make it so seriesResult() can access the playerScore and computerScore in game() function
+function seriesWinner(playerScore, computerScore) {
+  // How do I make it so seriesWinner() can access the playerScore and computerScore in game() function
   if (playerScore === "5" && computerScore < "5") {
-  return "You won the series!";
+  return ("You won the series!");
   } else if (computerScore === "5" && playerScore < "5") {
-  return "You lost the series!";
+  return ("You lost the series!");
   } else {
     // Do nothing.
   }
 }
-// console.log(seriesResults());
+// console.log(seriesWinner());
 
 // A <div> with a black border and blue background color 
 const shellDiv = document.createElement("div");
@@ -166,11 +165,11 @@ shellDiv.appendChild(scoreParagraph);
 container.appendChild(shellDiv);
 
 // A <h5> that announces the winner of the series
-seriesResult = document.createElement("h5");
-seriesResult.classList.add("seriesResultContent");
-seriesResult.style.color = "red";
+seriesResults = document.createElement("h5");
+seriesResults.classList.add("seriesResultsContent");
+seriesResults.style.color = "red";
 
-shellDiv.appendChild(seriesResult);
+shellDiv.appendChild(seriesResults);
 container.appendChild(shellDiv);
 
 //add documentation
