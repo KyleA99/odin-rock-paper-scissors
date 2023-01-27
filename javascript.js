@@ -5,7 +5,9 @@ let tieScore = 0;
 // Initializing variables with the output expected to be strings
 let playerSelection = "";
 let computerSelection = "";
+let playRoundResult = "";
 let playRoundResults = "";
+let seriesScore = "";
 
 // Selects the #results-container - not actually using this...
 // const container = document.querySelector("#results-container");
@@ -39,11 +41,16 @@ buttons.forEach((button) => {
     scoreParagraph.textContent = displayText;
     // console.log(displayText);
 
-    // let displayChampionResults = champion(playerScore, computerScore);
-    // championResults.textContent = displayChampionResults;
-    // console.log(displayChampionResults);
+    // let displaySeriesResult = seriesResult();
+    // seriesResult.textContent = displaySeriesResult;
+    // console.log(displaySeriesWinner);
   });
 });
+
+function concatenateSelections(playerSelection, computerSelection) {
+  playerSelection = playerSelection;
+  return (playerSelection + computerSelection);
+}
 
 /**
  * Evaluates the winner of a single round using a switch case statement 
@@ -52,23 +59,32 @@ buttons.forEach((button) => {
  * @returns {string} A string stating the winner of the round
  */
 function playRound(playerSelection, computerSelection) {
-  switch(playerSelection + computerSelection) {
+  switch(concatenateSelections(playerSelection, computerSelection)) {
     case "rockscissors":
+      playRoundResult = "Win";
+      break;
     case "paperrock":
+      playRoundResult = "Win";
+      break;
     case "scissorspaper":
-    return "Win";
-    // break;
+      playRoundResult = "Win";
+      break; 
     case "rockpaper":
+      playRoundResult = "Lose"
+      break;
     case "paperscissors":
+      playRoundResult = "Lose"
+      break;
     case "scissorsrock":
-    return "Lose";
-    // break;
+      playRoundResult = "Lose"
+      break;
     default:
-    return "Tie";
+      playRoundResult = "Tie"
   }
+  return playRoundResult
 }
 
-  function roundScore(result) {
+function roundScore(result) {
     // result = playRound(playerSelection, computerSelection);
   if (result === "Win") {
     return ("You won this round!")
@@ -85,33 +101,38 @@ function playRound(playerSelection, computerSelection) {
  * @returns {string} The score of a game using template literals and announces the game results
  */
 function game(result) {
+  // for (let i = 0; i < 5; i++) {
   if (result === "Win") {
-    playerScore++;
-  } else if (result === "Lose") {
-    computerScore++;
-  } else {
-    tieScore++;
+      playerScore++;
+    } else if (result === "Lose") {
+      computerScore++;
+    } else {
+      tieScore++;
+    }
   }
   // console.log(playerScore)
 
   if (playerScore > computerScore) {
-    return (`The score (user, computer, tie) is: ${playerScore}, ${computerScore}, ${tieScore}`);
+    return (`The score is: ${playerScore}, ${computerScore}`);
   } else if (playerScore < computerScore) {
-    return (`The score (user, computer, tie) is: ${playerScore}, ${computerScore}, ${tieScore}`);
+    return (`The score is: ${playerScore}, ${computerScore}`);
   } else {
-    return (`The score (user, computer, tie) is: ${playerScore}, ${computerScore}, ${tieScore}`);
+    return (`The score is: ${playerScore}, ${computerScore}`);
   }
-}
+// }
 // console.log(game());
 
-// function champion(playerScore, computerScore) {
-  //playerScore and computerScore is only taking the "0" we have declared globally. need to set value in block scope
-//   if (playerScore === "5" && computerScore < "5") {
-//     return ("You are the champion!");
-//   } else if (computerScore === "5" && playerScore < "5") {
-//     return ("You lost the game!")
-//   }
-// } 
+function seriesResult() {
+  seriesScore = game(); // How do I make it so seriesResult() can access the playerScore and computerScore in game() function
+  if (playerScore === "5" && computerScore < "5") {
+  return "You won the series!";
+  } else if (computerScore === "5" && playerScore < "5") {
+  return "You lost the series!";
+  } else {
+    // Do nothing.
+  }
+}
+// console.log(seriesResults());
 
 // A <div> with a black border and blue background color 
 const shellDiv = document.createElement("div");
@@ -144,13 +165,15 @@ scoreParagraph.style.color = "white";
 shellDiv.appendChild(scoreParagraph);
 container.appendChild(shellDiv);
 
-// A <h5> that announces the champion
-championResults = document.createElement("h5");
-championResults.classList.add("championResultsContent");
-championResults.style.color = "red";
+// A <h5> that announces the winner of the series
+seriesResult = document.createElement("h5");
+seriesResult.classList.add("seriesResultContent");
+seriesResult.style.color = "red";
 
-shellDiv.appendChild(championResults);
+shellDiv.appendChild(seriesResult);
 container.appendChild(shellDiv);
 
 //add documentation
 // merge branches
+
+// add a button for resetting the game (maybe reset webpage somehow)
