@@ -31,6 +31,7 @@ buttons.forEach((button) => {
 // For each button we add a click listener which calls the playRound function and passes the "click" event objects through playRound
   button.addEventListener("click", () => {
     computerSelection = getComputerChoice();
+    //declares result variable and converts button.id to be equal to playerSelection
     let result = playRound(button.id, computerSelection);
     // console.log(playRound(button.id, computerSelection));
 
@@ -83,18 +84,6 @@ function playRound(playerSelection, computerSelection) {
   }
   return playRoundResult
 }
-
-function roundScore(result) {
-    // result = playRound(playerSelection, computerSelection);
-  if (result === "Win") {
-    return ("You won this round!")
-  } else if (result === "Lose") {
-    return ("You lost this round!")
-  } else {
-    return ("Tie!")
-  }
-}  
-// console.log(roundResults(result));
 
 /**
  * Calls the playRound function, increments the player and computer scores, and determines the winner for a 5 round game
