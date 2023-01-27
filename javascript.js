@@ -42,9 +42,9 @@ buttons.forEach((button) => {
     scoreParagraph.textContent = displayText;
     // console.log(displayText);
 
-    // let displaySeriesResult = seriesResult();
-    // seriesResult.textContent = displaySeriesResult;
-    // console.log(displaySeriesWinner);
+    let displaySeriesResult = seriesResult();
+    seriesResult.textContent = displaySeriesResult;
+    console.log(displaySeriesWinner);
   });
 });
 
@@ -85,12 +85,23 @@ function playRound(playerSelection, computerSelection) {
   return playRoundResult
 }
 
+function roundScore(result) {
+  if (result === "Win") {
+    return ("You won this round!")
+  } else if (result === "Lose") {
+    return ("You lost this round!")
+  } else {
+    return ("Tie!")
+  }
+}  
+// console.log(roundResults(result));
+
 /**
  * Calls the playRound function, increments the player and computer scores, and determines the winner for a 5 round game
  * @returns {string} The score of a game using template literals and announces the game results
  */
 function game(result) {
-  // for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 5; i++) {
   if (result === "Win") {
       playerScore++;
     } else if (result === "Lose") {
@@ -108,7 +119,7 @@ function game(result) {
   } else {
     return (`The score is: ${playerScore}, ${computerScore}`);
   }
-// }
+}
 // console.log(game());
 
 function seriesResult() {
