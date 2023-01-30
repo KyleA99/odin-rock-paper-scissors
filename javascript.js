@@ -19,8 +19,8 @@ function getComputerChoice() {
   return choiceClass[randomChoiceClass];
 }
 
-// Declares a constant called buttons which is a node list (looks/behaves similar to an array)
-const buttons = document.querySelectorAll("button");
+// Declares a variable called buttons which is a node list (looks/behaves similar to an array)
+let buttons = document.querySelectorAll("button");
 
 // forEach method is used to iterate through each button
 buttons.forEach((button) => {
@@ -41,6 +41,8 @@ buttons.forEach((button) => {
 
     let displaySeriesResults = seriesWinner(playerScore, computerScore);
     seriesResults.textContent = displaySeriesResults;
+      if(playerScore === 5 || computerScore === 5)
+        endGame();
     // console.log(displaySeriesResults);
   });
 });
@@ -51,7 +53,7 @@ function concatenateSelections(playerSelection, computerSelection) {
   computerSelection = getComputerChoice();
   return (playerSelection + computerSelection);
 }
-// console.log(concatenateSelections(playerSelection, computerSelection)); doesnt work
+// console.log(concatenateSelections(playerSelection, computerSelection)); doesnt work...
 
 /**
  * Evaluates the winner of a single round using a switch case statement 
@@ -84,7 +86,7 @@ function playRound(playerSelection, computerSelection) {
   }
   return playRoundResult
 }
-// console.log(playRound(playerSelection, computerSelection)); doesnt work...
+// console.log(playRound(playerSelection, computerSelection)) doesnt work...
 
 function roundScore(result) {
   if (result === "Win") {
@@ -95,7 +97,7 @@ function roundScore(result) {
     return ("Tie!")
   }
 }  
-// console.log(roundScore());
+// console.log(roundScore()); doesnt work...
 
 /**
  * Calls the playRound function, increments the player and computer scores, and determines the winner for a 5 round game
@@ -109,7 +111,6 @@ function game(result) {
     } else {
       tieScore++;
     }
-  // console.log(playerScore)
 
   if (playerScore > computerScore) {
     return (`The score is: ${playerScore}, ${computerScore}`);
@@ -119,7 +120,7 @@ function game(result) {
     return (`The score is: ${playerScore}, ${computerScore}`);
   }
 }
-// console.log(game());
+// console.log(game(result)); doesnt work
 
 function seriesWinner(playerScore, computerScore) {
   if (playerScore === 5 && computerScore < 5) {
@@ -129,19 +130,21 @@ function seriesWinner(playerScore, computerScore) {
   } else {
     // Do nothing.
   }
-  // console.log(playerScore);
-  // console.log(computerScore);
 }
-  // console.log(seriesWinner(playerScore, computerScore));
+  // console.log(seriesWinner(playerScore, computerScore)); doesnt work...
 
+// Re-declares a variable called buttons which is a node list
 function endGame() {
   let seriesResult = seriesWinner(playerScore, computerScore);
   if (seriesResult === "You won the series!" || "You lost the series!") {
-    document.querySelectorAll("button").disabled = true;  // buttons arent disabling...
+    buttons = document.querySelectorAll("button");
+    buttons.forEach(button => button.disabled = true); {
+    }
   } else {
-    // Do nothing.
+  // Do nothing.
   }
 }
+// console.log(endGame()); doesnt work...
 
 // A <div> with a black border and blue background color 
 const shellDiv = document.createElement("div");
