@@ -8,9 +8,6 @@ let computerSelection = "";
 let playRoundResult = "";
 let playRoundResults = "";
 
-// Selects the #results-container - not actually using this...
-// const container = document.querySelector("#results-container");
-
 /**
  * Generates a randomized choiceClass from the array using the Math.random method
  * @returns {string} choiceClass values that have been randomly selected
@@ -36,6 +33,7 @@ buttons.forEach((button) => {
 
     let displayRoundResults = roundScore(result);
     roundResults.textContent = displayRoundResults;
+    // console.log(displayRoundResults);
 
     let displayText = game(result);
     scoreParagraph.textContent = displayText;
@@ -43,14 +41,17 @@ buttons.forEach((button) => {
 
     let displaySeriesResults = seriesWinner(playerScore, computerScore);
     seriesResults.textContent = displaySeriesResults;
-    // console.log(displaySeriesWinner);
+    // console.log(displaySeriesResults);
   });
 });
 
 function concatenateSelections(playerSelection, computerSelection) {
   playerSelection = playerSelection;
+  //playerSelection = how to call button.id here?
+  computerSelection = getComputerChoice();
   return (playerSelection + computerSelection);
 }
+console.log(concatenateSelections(playerSelection, computerSelection));
 
 /**
  * Evaluates the winner of a single round using a switch case statement 
@@ -83,6 +84,7 @@ function playRound(playerSelection, computerSelection) {
   }
   return playRoundResult
 }
+// console.log(playRound(playerSelection, computerSelection)); doesnt work...
 
 function roundScore(result) {
   if (result === "Win") {
@@ -93,7 +95,7 @@ function roundScore(result) {
     return ("Tie!")
   }
 }  
-// console.log(roundResults(result));
+// console.log(roundScore());
 
 /**
  * Calls the playRound function, increments the player and computer scores, and determines the winner for a 5 round game
@@ -111,6 +113,8 @@ function game(result) {
   // }
   // console.log(playerScore)
 
+  // console.log(playerScore);
+  // console.log(computerScore);
   if (playerScore > computerScore) {
     return (`The score is: ${playerScore}, ${computerScore}`);
   } else if (playerScore < computerScore) {
@@ -122,16 +126,17 @@ function game(result) {
 // console.log(game());
 
 function seriesWinner(playerScore, computerScore) {
-  // How do I make it so seriesWinner() can access the playerScore and computerScore in game() function
-  if (playerScore === "5" && computerScore < "5") {
+  if (playerScore === 5 && computerScore < 5) {
   return ("You won the series!");
-  } else if (computerScore === "5" && playerScore < "5") {
+  } else if (computerScore === 5 && playerScore < 5) {
   return ("You lost the series!");
   } else {
     // Do nothing.
   }
+  // console.log(playerScore);
+  // console.log(computerScore);
 }
-// console.log(seriesWinner());
+  // console.log(seriesWinner(playerScore, computerScore));
 
 // A <div> with a black border and blue background color 
 const shellDiv = document.createElement("div");
