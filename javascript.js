@@ -51,7 +51,7 @@ function concatenateSelections(playerSelection, computerSelection) {
   computerSelection = getComputerChoice();
   return (playerSelection + computerSelection);
 }
-console.log(concatenateSelections(playerSelection, computerSelection));
+// console.log(concatenateSelections(playerSelection, computerSelection)); doesnt work
 
 /**
  * Evaluates the winner of a single round using a switch case statement 
@@ -102,7 +102,6 @@ function roundScore(result) {
  * @returns {string} The score of a game using template literals and announces the game results
  */
 function game(result) {
-  // for (let i = 0; i < 5; i++) {
   if (result === "Win") {
       playerScore++;
     } else if (result === "Lose") {
@@ -110,11 +109,8 @@ function game(result) {
     } else {
       tieScore++;
     }
-  // }
   // console.log(playerScore)
 
-  // console.log(playerScore);
-  // console.log(computerScore);
   if (playerScore > computerScore) {
     return (`The score is: ${playerScore}, ${computerScore}`);
   } else if (playerScore < computerScore) {
@@ -137,6 +133,15 @@ function seriesWinner(playerScore, computerScore) {
   // console.log(computerScore);
 }
   // console.log(seriesWinner(playerScore, computerScore));
+
+function endGame() {
+  let seriesResult = seriesWinner(playerScore, computerScore);
+  if (seriesResult === "You won the series!" || "You lost the series!") {
+    document.querySelectorAll("button").disabled = true;  // buttons arent disabling...
+  } else {
+    // Do nothing.
+  }
+}
 
 // A <div> with a black border and blue background color 
 const shellDiv = document.createElement("div");
@@ -179,5 +184,6 @@ container.appendChild(shellDiv);
 
 //add documentation
 // merge branches
+// arrow functions
 
 // add a button for resetting the game (maybe reset webpage somehow)
