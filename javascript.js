@@ -22,16 +22,17 @@ function getComputerChoice() {
 // Declares a variable called buttons which is a node list (looks/behaves similar to an array)
 let buttons = document.querySelectorAll("button");
 
-// forEach method is used to iterate through each button
+/**
+ * For each button we add a click listener which calls the playRound function and passes the "click" event objects through playRound()
+ */
 buttons.forEach((button) => {
-// For each button we add a click listener which calls the playRound function and passes the "click" event objects through playRound
   button.addEventListener("click", () => {
     computerSelection = getComputerChoice();
     //declares result variable and converts button.id to be equal to playerSelection
     let result = playRound(button.id, computerSelection);
     // console.log(playRound(button.id, computerSelection));
 
-    let displayRoundResults = roundScore(result);
+    let displayRoundResults = roundResult(result);
     roundResults.textContent = displayRoundResults;
     // console.log(displayRoundResults);
 
@@ -47,6 +48,12 @@ buttons.forEach((button) => {
   });
 });
 
+/**
+ * Concatenates player and computer selections for each round
+ * @param {*} playerSelection Calls the value for the player's move
+ * @param {*} computerSelection Calls the value for the computer's move
+ * @returns A string containing the concatenated selections
+ */
 function concatenateSelections(playerSelection, computerSelection) {
   playerSelection = playerSelection;
   //playerSelection = how to call button.id here?
@@ -59,7 +66,7 @@ function concatenateSelections(playerSelection, computerSelection) {
  * Evaluates the winner of a single round using a switch case statement 
  * @param {string} playerSelection Calls the value for the player's move
  * @param {string} computerSelection Calls the value for the computer's move
- * @returns {string} A string stating the winner of the round
+ * @returns {string} A string stating whether the player won, lost, or tied each round
  */
 function playRound(playerSelection, computerSelection) {
   switch(concatenateSelections(playerSelection, computerSelection)) {
@@ -88,7 +95,12 @@ function playRound(playerSelection, computerSelection) {
 }
 // console.log(playRound(playerSelection, computerSelection)) doesnt work...
 
-function roundScore(result) {
+/**
+ * Returns a message declaring whether the player won, lost, or tied for the DOM display
+ * @param {string} result 
+ * @returns {string} A string stating whether the user/player won, lost, or tied each round
+ */
+function roundResult(result) {
   if (result === "Win") {
     return ("You won this round!")
   } else if (result === "Lose") {
@@ -97,10 +109,10 @@ function roundScore(result) {
     return ("Tie!")
   }
 }  
-// console.log(roundScore()); doesnt work...
+// console.log(roundResult()); doesnt work...
 
 /**
- * Calls the playRound function, increments the player and computer scores, and determines the winner for a 5 round game
+ * Calls the playRound function, increments the player and computer scores, and displays the winner for a 5 round game
  * @returns {string} The score of a game using template literals and announces the game results
  */
 function game(result) {
@@ -122,6 +134,12 @@ function game(result) {
 }
 // console.log(game(result)); doesnt work
 
+/**
+ * Determines the winner of the series (first to reach a score of 5)
+ * @param {string} playerScore Calls the value for the player's move
+ * @param {string} computerScore Calls the value for the computer's move
+ * @returns {string} Whether the player won or lost the series
+ */
 function seriesWinner(playerScore, computerScore) {
   if (playerScore === 5 && computerScore < 5) {
   return ("You won the series!");
@@ -133,10 +151,13 @@ function seriesWinner(playerScore, computerScore) {
 }
   // console.log(seriesWinner(playerScore, computerScore)); doesnt work...
 
-// Re-declares a variable called buttons which is a node list
+/**
+ * Disables the rock, paper, and scissors selection buttons if seriesResult returns a string successfully
+ */
 function endGame() {
   let seriesResult = seriesWinner(playerScore, computerScore);
   if (seriesResult === "You won the series!" || "You lost the series!") {
+    // Re-declares a variable called buttons which is a node list
     buttons = document.querySelectorAll("button");
     buttons.forEach(button => button.disabled = true); {
     }
@@ -185,8 +206,7 @@ seriesResults.style.color = "red";
 shellDiv.appendChild(seriesResults);
 container.appendChild(shellDiv);
 
-//add documentation
 // merge branches
 // arrow functions
-
 // add a button for resetting the game (maybe reset webpage somehow)
+// how should code be ordered/organized?
