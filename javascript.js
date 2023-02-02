@@ -7,6 +7,9 @@ let playerSelection = "";
 let computerSelection = "";
 let playRoundResult = "";
 let playRoundResults = "";
+let playerRoundWin = "You won this round!";
+let playerRoundLose = "You lost this round!";
+let playerRoundTie = "Tie!"
 
 /**
  * Generates a randomized choiceClass from the array using the Math.random method
@@ -102,11 +105,11 @@ function playRound(playerSelection, computerSelection) {
  */
 function roundResult(result) {
   if (result === "Win") {
-    return ("You won this round!")
+    return (playerRoundWin)
   } else if (result === "Lose") {
-    return ("You lost this round!")
+    return (playerRoundLose)
   } else {
-    return ("Tie!")
+    return (playerRoundTie)
   }
 }  
 // console.log(roundResult()); doesnt work...
@@ -115,7 +118,7 @@ function roundResult(result) {
  * Calls the playRound function, increments the player and computer scores, and displays the winner for a 5 round game
  * @returns {string} The score of a game using template literals and announces the game results
  */
-function game(result) {
+function game(result) { //rename function - verbs for functions
   if (result === "Win") {
       playerScore++;
     } else if (result === "Lose") {
@@ -167,6 +170,8 @@ function endGame() {
 }
 // console.log(endGame()); doesnt work...
 
+// these can be in a function, then call the function. helps with scalability
+
 // A <div> with a black border and blue background color 
 const shellDiv = document.createElement("div");
 shellDiv.classList.add("shellDivContent");
@@ -210,3 +215,11 @@ container.appendChild(shellDiv);
 // arrow functions
 // add a button for resetting the game (maybe reset webpage somehow)
 // how should code be ordered/organized?
+
+// edge case: 
+
+// exception handling - try and catch block. to introduce error handling so errors dont break the runtime. 
+
+//function library for handling game.  
+
+// mvc design pattern
