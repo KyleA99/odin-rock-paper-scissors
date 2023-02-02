@@ -34,11 +34,11 @@ buttons.forEach((button) => {
     let result = playRound(button.id, computerSelection);
     // console.log(playRound(button.id, computerSelection));
 
-    let displayRoundResults = roundResult(result);
+    let displayRoundResults = determineRoundResult(result);
     roundResults.textContent = displayRoundResults;
     // console.log(displayRoundResults);
 
-    let displayText = game(result);
+    let displayText = calculateGameScore(result);
     scoreParagraph.textContent = displayText;
     // console.log(displayText);
 
@@ -102,7 +102,7 @@ function playRound(playerSelection, computerSelection) {
  * @param {string} result 
  * @returns {string} A string stating whether the user/player won, lost, or tied each round
  */
-function roundResult(result) {
+function determineRoundResult(result) {
   if (result === "Win") {
     return (playerRoundWin)
   } else if (result === "Lose") {
@@ -117,7 +117,7 @@ function roundResult(result) {
  * Calls the playRound function, increments the player and computer scores, and displays the winner for a 5 round game
  * @returns {string} The score of a game using template literals and announces the game results
  */
-function game(result) { //rename function - verbs for functions
+function calculateGameScore(result) {
   if (result === "Win") {
       playerScore++;
     } else if (result === "Lose") {
@@ -214,8 +214,6 @@ container.appendChild(shellDiv);
 // arrow functions
 // add a button for resetting the game (maybe reset webpage somehow)
 // how should code be ordered/organized?
-
-// edge case: 
 
 // exception handling - try and catch block. to introduce error handling so errors dont break the runtime. 
 
