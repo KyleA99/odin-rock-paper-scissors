@@ -1,15 +1,14 @@
+// Variables
 let playerScore = 0;
 let computerScore = 0;
 let tieScore = 0;
-
-// Initializing variables with the output expected to be strings
 let playerSelection = "";
 let computerSelection = "";
 let playRoundResult = "";
 let playRoundResults = "";
-let playerRoundWin = "You won this round!";
-let playerRoundLose = "You lost this round!";
-let playerRoundTie = "Tie!"
+const playerRoundWin = "You won this round!";
+const playerRoundLose = "You lost this round!";
+const playerRoundTie = "Tie!"
 
 /**
  * Generates a randomized choiceClass from the array using the Math.random method
