@@ -10,6 +10,9 @@ const playerRoundWin = "You won this round!";
 const playerRoundLose = "You lost this round!";
 const playerRoundTie = "Tie!"
 
+let buttons = document.querySelectorAll("button");
+const resetButton = document.querySelector("resetButton");
+
 /**
  * Generates a randomized choiceClass from the array using the Math.random method
  * @returns {string} choiceClass values that have been randomly selected
@@ -20,9 +23,6 @@ function getComputerChoice() {
   // console.log(choiceClass[randomChoiceClass]);
   return choiceClass[randomChoiceClass];
 }
-
-// Declares a variable called buttons which is a node list (looks/behaves similar to an array)
-let buttons = document.querySelectorAll("button");
 
 /**
  * For each button we add a click listener which calls the playRound function and passes the "click" event objects through playRound()
@@ -49,6 +49,12 @@ buttons.forEach((button) => {
     // console.log(displaySeriesResults);
   });
 });
+
+document.getElementById("resetButton").addEventListener("click", reloadPage);
+
+function reloadPage() {
+  window.location.reload();
+}
 
 /**
  * Concatenates player and computer selections for each round
@@ -209,14 +215,3 @@ seriesResults.style.color = "red";
 
 shellDiv.appendChild(seriesResults);
 selectionButtonsContainer.appendChild(shellDiv);
-
-// merge branches
-// arrow functions
-// add a button for resetting the game (maybe reset webpage somehow)
-// how should code be ordered/organized?
-
-// exception handling - try and catch block. to introduce error handling so errors dont break the runtime. 
-
-//function library for handling game.  
-
-// mvc design pattern
