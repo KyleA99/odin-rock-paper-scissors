@@ -50,8 +50,12 @@ buttons.forEach((button) => {
   });
 });
 
+// For the resetButton, we add an event listener which calls reloadPage() and passes the click event objects through reloadPage()
 document.getElementById("resetButton").addEventListener("click", reloadPage);
 
+/**
+ * Reloads window/webpage
+ */
 function reloadPage() {
   window.location.reload();
 }
