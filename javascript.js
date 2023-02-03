@@ -192,7 +192,7 @@ roundResults.classList.add("roundResultsContent");
 roundResults.style.color = "white";
 
 shellDiv.appendChild(roundResults);
-container.appendChild(shellDiv);
+selectionButtonsContainer.appendChild(shellDiv);
 
 // A <p> that announces the score
 scoreParagraph = document.createElement("p");
@@ -200,7 +200,7 @@ scoreParagraph.classList.add("scoreParagraphContent");
 scoreParagraph.style.color = "white";
 
 shellDiv.appendChild(scoreParagraph);
-container.appendChild(shellDiv);
+selectionButtonsContainer.appendChild(shellDiv);
 
 // A <h5> that announces the winner of the series
 seriesResults = document.createElement("h5");
@@ -208,7 +208,7 @@ seriesResults.classList.add("seriesResultsContent");
 seriesResults.style.color = "red";
 
 shellDiv.appendChild(seriesResults);
-container.appendChild(shellDiv);
+selectionButtonsContainer.appendChild(shellDiv);
 
 // merge branches
 // arrow functions
