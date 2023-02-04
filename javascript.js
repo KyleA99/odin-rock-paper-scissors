@@ -10,7 +10,7 @@ const playerRoundWin = "You won this round!";
 const playerRoundLose = "You lost this round!";
 const playerRoundTie = "Tie!"
 
-let buttons = document.querySelectorAll("button");
+let buttons = document.querySelectorAll("#selectionButtonsContainer > button");
 const resetButton = document.querySelector("resetButton");
 
 /**
@@ -170,7 +170,7 @@ function endGame() {
   let seriesResult = seriesWinner(playerScore, computerScore);
   if (seriesResult === "You won the series!" || "You lost the series!") {
     // Re-declares a variable called buttons which is a node list
-    buttons = document.querySelectorAll("button");
+    buttons = document.querySelectorAll("#selectionButtonsContainer > button");
     buttons.forEach(button => button.disabled = true); {
     }
   } else {
