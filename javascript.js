@@ -61,12 +61,10 @@ document.getElementById("resetButton").addEventListener("click", reloadPage);
  * @param {*} computerSelection Calls the value for the computer's move
  * @returns A string containing the concatenated selections
  */
-function concatenateSelections(playerSelection, computerSelection) {
+let concatenateSelections = (playerSelection, computerSelection) => (playerSelection + computerSelection);
   playerSelection = playerSelection;
   //playerSelection = how to call button.id here?
   computerSelection = getComputerChoice();
-  return (playerSelection + computerSelection);
-}
 // console.log(concatenateSelections(playerSelection, computerSelection)); doesnt work...
 
 /**
