@@ -73,7 +73,7 @@ let concatenateSelections = (playerSelection, computerSelection) => (playerSelec
  * @param {string} computerSelection Calls the value for the computer's move
  * @returns {string} A string stating whether the player won, lost, or tied each round
  */
-function playRound(playerSelection, computerSelection) {
+let playRound = (playerSelection, computerSelection) => {
   switch(concatenateSelections(playerSelection, computerSelection)) {
     case "rockscissors":
       playRoundResult = "Win";
@@ -96,7 +96,7 @@ function playRound(playerSelection, computerSelection) {
     default:
       playRoundResult = "Tie"
   }
-  return playRoundResult
+  return playRoundResult;
 }
 // console.log(playRound(playerSelection, computerSelection)) doesnt work...
 
@@ -105,7 +105,7 @@ function playRound(playerSelection, computerSelection) {
  * @param {string} result 
  * @returns {string} A string stating whether the user/player won, lost, or tied each round
  */
-function determineRoundResult(result) {
+let determineRoundResult = result => {
   if (result === "Win") {
     return (playerRoundWin)
   } else if (result === "Lose") {
@@ -120,7 +120,7 @@ function determineRoundResult(result) {
  * Calls the playRound function, increments the player and computer scores, and displays the winner for a 5 round game
  * @returns {string} The score of a game using template literals and announces the game results
  */
-function calculateGameScore(result) {
+let calculateGameScore = result => {
   if (result === "Win") {
       playerScore++;
     } else if (result === "Lose") {
