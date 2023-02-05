@@ -20,7 +20,6 @@ const resetButton = document.querySelector("resetButton");
 let getComputerChoice = () => {
   let choiceClass = ["rock", "paper", "scissors"];
   let randomChoiceClass = Math.floor(Math.random() * choiceClass.length);
-  // console.log(choiceClass[randomChoiceClass]);
   return choiceClass[randomChoiceClass];
 }
 
@@ -32,33 +31,29 @@ buttons.forEach((button) => {
     computerSelection = getComputerChoice();
     //declares result variable and converts button.id to be equal to playerSelection
     let result = playRound(button.id, computerSelection);
-    // console.log(playRound(button.id, computerSelection));
 
     let displayRoundResults = determineRoundResult(result);
     roundResults.textContent = displayRoundResults;
-    // console.log(displayRoundResults);
 
     let displayText = calculateGameScore(result);
     scoreParagraph.textContent = displayText;
-    // console.log(displayText);
 
     let displaySeriesResults = seriesWinner(playerScore, computerScore);
     seriesResults.textContent = displaySeriesResults;
       if(playerScore === 5 || computerScore === 5)
         endGame();
-    // console.log(displaySeriesResults);
   });
 });
-
-// For the resetButton, we add an event listener which calls reloadPage() and passes the click event objects through reloadPage()
-document.getElementById("resetButton").addEventListener("click", reloadPage);
 
 /**
  * Reloads window/webpage
  */
-function reloadPage() {
+let reloadPage = () => {
   window.location.reload();
 }
+
+// For the resetButton, we add an event listener which calls reloadPage() and passes the click event objects through reloadPage()
+document.getElementById("resetButton").addEventListener("click", reloadPage);
 
 /**
  * Concatenates player and computer selections for each round
