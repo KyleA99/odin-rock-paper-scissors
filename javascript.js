@@ -17,7 +17,7 @@ const resetButton = document.querySelector("resetButton");
  * Generates a randomized choiceClass from the array using the Math.random method
  * @returns {string} choiceClass values that have been randomly selected
  */
-function getComputerChoice() {
+let getComputerChoice = () => {
   let choiceClass = ["rock", "paper", "scissors"];
   let randomChoiceClass = Math.floor(Math.random() * choiceClass.length);
   // console.log(choiceClass[randomChoiceClass]);
@@ -178,8 +178,6 @@ function endGame() {
   }
 }
 // console.log(endGame()); doesnt work...
-
-// these can be in a function, then call the function. helps with scalability
 
 // A <div> with a black border and blue background color 
 const shellDiv = document.createElement("div");
