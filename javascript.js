@@ -42,7 +42,7 @@ buttons.forEach((button) => {
 
     let displaySeriesResults = seriesWinner(playerScore, computerScore);
     seriesResults.textContent = displaySeriesResults;
-      if(playerScore === 10 || computerScore === 10)
+      if(playerScore === 5 || computerScore === 5)
         endGame();
   });
 });
@@ -145,6 +145,7 @@ let seriesWinner = (playerScore, computerScore) => {
   } else {
     // Do nothing.
   }
+// Try...catch statement for error handling
   try {
       if (playerScore > 5 || computerScore > 5) throw "exceeds 5"
   }
@@ -158,7 +159,7 @@ let seriesWinner = (playerScore, computerScore) => {
  * Disables the rock, paper, and scissors selection buttons if seriesResult returns a string successfully
  */
 let endGame =() => {
-  let seriesResult = seriesWinner(playerScore, computerScore);
+  let seriesResult = seriesWinner();
   if (seriesResult === "You won the series!" || "You lost the series!") {
     // Re-declares a variable called buttons which is a node list
     buttons = document.querySelectorAll("#selectionButtonsContainer > button");
