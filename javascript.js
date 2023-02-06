@@ -13,6 +13,8 @@ const playerRoundTie = "Tie!"
 let buttons = document.querySelectorAll("#selectionButtonsContainer > button");
 const resetButton = document.querySelector("resetButton");
 
+// Game Logic
+
 /**
  * Generates a randomized choiceClass from the array using the Math.random method
  * @returns {string} choiceClass values that have been randomly selected
@@ -40,7 +42,7 @@ buttons.forEach((button) => {
 
     let displaySeriesResults = seriesWinner(playerScore, computerScore);
     seriesResults.textContent = displaySeriesResults;
-      if(playerScore === 5 || computerScore === 5)
+      if(playerScore === 10 || computerScore === 10)
         endGame();
   });
 });
@@ -142,6 +144,12 @@ let seriesWinner = (playerScore, computerScore) => {
   return ("You lost the series!");
   } else {
     // Do nothing.
+  }
+  try {
+      if (playerScore > 5 || computerScore > 5) throw "exceeds 5"
+  }
+  catch(err) {
+    alert ("Round count " + err);
   }
 }
   // console.log(seriesWinner(playerScore, computerScore)); doesnt work...
