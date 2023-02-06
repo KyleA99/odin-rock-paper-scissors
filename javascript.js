@@ -145,7 +145,7 @@ let calculateGameScore = result => {
  * @param {string} computerScore Calls the value for the computer's move
  * @returns {string} Whether the player won or lost the series
  */
-function seriesWinner(playerScore, computerScore) {
+let seriesWinner = (playerScore, computerScore) => {
   if (playerScore === 5 && computerScore < 5) {
   return ("You won the series!");
   } else if (computerScore === 5 && playerScore < 5) {
@@ -159,7 +159,7 @@ function seriesWinner(playerScore, computerScore) {
 /**
  * Disables the rock, paper, and scissors selection buttons if seriesResult returns a string successfully
  */
-function endGame() {
+let endGame =() => {
   let seriesResult = seriesWinner(playerScore, computerScore);
   if (seriesResult === "You won the series!" || "You lost the series!") {
     // Re-declares a variable called buttons which is a node list
