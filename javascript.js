@@ -46,16 +46,6 @@ buttons.forEach((button) => {
 });
 
 /**
- * Reloads window/webpage
- */
-let reloadPage = () => {
-  window.location.reload();
-}
-
-// For the resetButton, we add an event listener which calls reloadPage() and passes the click event objects through reloadPage()
-document.getElementById("resetButton").addEventListener("click", reloadPage);
-
-/**
  * Concatenates player and computer selections for each round
  * @param {*} playerSelection Calls the value for the player's move
  * @param {*} computerSelection Calls the value for the computer's move
@@ -171,6 +161,18 @@ let endGame =() => {
   }
 }
 // console.log(endGame()); doesnt work...
+
+/**
+ * Reloads window/webpage
+ */
+let reloadPage = () => {
+  window.location.reload();
+}
+
+// For the resetButton, we add an event listener which calls reloadPage() and passes the click event objects through reloadPage()
+document.getElementById("resetButton").addEventListener("click", reloadPage);
+
+// UI Display
 
 // A <div> with a black border and blue background color 
 const shellDiv = document.createElement("div");
