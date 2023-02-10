@@ -9,13 +9,13 @@
 .body {
     display: flex;
     justify-content: center;
+    /* background-image: url(dark-brick-wall-background.jpg); */
 }
 
 .header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(0, 0, 0);
 }
 
 .header-title {
@@ -31,7 +31,7 @@
     gap: 24px;
     font-family: "Brush Script MT", sans-serif;
     font-size: 48px;
-    color: #11890f;
+    color: #36d633;
 
     text-shadow:
       0 0 7px #fff,
