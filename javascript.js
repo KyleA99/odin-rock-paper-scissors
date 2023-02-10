@@ -183,18 +183,15 @@ document.getElementById("resetButton").addEventListener("click", reloadPage);
 
 // UI Display
 
-// A <div> with a black border and blue background color 
+// A <div> used to contain results displays
 const shellDiv = document.createElement("div");
 shellDiv.classList.add("shellDivContent");
-shellDiv.style.border = "solid";
-shellDiv.style.margin = "12px";
-shellDiv.style.backgroundColor = "blue";
 
 // A <h1> announcing the rules
 const shellHeader = document.createElement("h1");
 shellHeader.classList.add("shellHeaderContent");
 shellHeader.textContent = "The first one to reach a score of 5 wins!";
-shellHeader.style.color = "black";
+shellHeader.style.color = "white";
 
 shellDiv.appendChild(shellHeader);
 
