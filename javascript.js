@@ -187,14 +187,6 @@ document.getElementById("resetButton").addEventListener("click", reloadPage);
 const shellDiv = document.createElement("div");
 shellDiv.classList.add("shellDivContent");
 
-// A <h1> announcing the rules
-const shellHeader = document.createElement("h1");
-shellHeader.classList.add("shellHeaderContent");
-shellHeader.textContent = "The first one to reach a score of 5 wins!";
-shellHeader.style.color = "white";
-
-shellDiv.appendChild(shellHeader);
-
 // A <h5> that announces the results of the most recent round
 roundResults = document.createElement("h4");
 roundResults.classList.add("roundResultsContent");
