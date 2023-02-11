@@ -52,10 +52,10 @@
 }
 
 .selectionButtonsContainer {
-  /* display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px; */
+  gap: 30px;
   }
 
 button#rock, button#paper, button#scissors {
