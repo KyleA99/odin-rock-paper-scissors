@@ -1,52 +1,70 @@
 *,
 *::before,
 *::after { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
 }
 
 .body {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header-title {
-    list-style-type: none;
-    display: flex;
-    margin: 8px;
-    gap: 12px;
+  list-style-type: none;
+  display: flex;
+  margin: 8px;
+  gap: 12px;
 }
 
 .header-text-container {
-    list-style-type: none;
-    margin: 8px;
-    gap: 24px;
-    font-family: "Brush Script MT", sans-serif;
-    font-size: 48px;
-    color: #36d633;
+  list-style-type: none;
+  margin: 8px;
+  gap: 24px;
+  font-family: "Brush Script MT", sans-serif;
+  font-size: 48px;
+  color: #36d633;
 
-    text-shadow:
-      0 0 7px #fff,
-      0 0 10px #fff,
-      0 0 21px #fff,
-      0 0 42px #0fa,
-      0 0 82px #0fa,
-      0 0 92px #0fa,
-      0 0 102px #0fa,
-      0 0 151px #0fa;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa;
 }
 
 .instructions {
-    color: white;
-    font-size: 24px;
-    text-align: center;
-    padding-top: 36px;
-    padding-bottom: 48px;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.selectionButtonsContainer {
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px; */
+  }
+
+button#rock, button#paper, button#scissors {
+  border: none;
+  width: 180px;
+  height: 180px;
+}
+
+img.image-rock, img.image-paper, img.image-scissors {
+  width: 180px;
+  height: 180px;
 }
