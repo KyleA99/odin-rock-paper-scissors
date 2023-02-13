@@ -17,10 +17,6 @@
   align-items: center;
 }
 
-div {
-    border: 2px solid red;
-    } 
-
 .header-title {
   list-style-type: none;
   display: flex;
