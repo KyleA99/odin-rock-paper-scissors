@@ -110,4 +110,9 @@
 
 #footer-text {
     color: white;
+    font: 20px;
+}
+
+.github-logo {
+    padding: 5px;
 }
