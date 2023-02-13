@@ -42,8 +42,9 @@ buttons.forEach((button) => {
 
     let displaySeriesResults = seriesWinner(playerScore, computerScore);
     seriesResults.textContent = displaySeriesResults;
-      if(playerScore === 5 || computerScore === 5)
+      if(playerScore === 5 || computerScore === 5) {
         endGame();
+      }
   });
 });
 
@@ -193,7 +194,7 @@ roundResults.classList.add("roundResultsContent");
 roundResults.style.color = "white";
 
 shellDiv.appendChild(roundResults);
-selectionButtonsContainer.appendChild(shellDiv);
+resultsContainer.appendChild(shellDiv);
 
 // A <p> that announces the score
 scoreParagraph = document.createElement("p");
@@ -201,7 +202,7 @@ scoreParagraph.classList.add("scoreParagraphContent");
 scoreParagraph.style.color = "white";
 
 shellDiv.appendChild(scoreParagraph);
-selectionButtonsContainer.appendChild(shellDiv);
+resultsContainer.appendChild(shellDiv);
 
 // A <h5> that announces the winner of the series
 seriesResults = document.createElement("h5");
@@ -209,4 +210,4 @@ seriesResults.classList.add("seriesResultsContent");
 seriesResults.style.color = "red";
 
 shellDiv.appendChild(seriesResults);
-selectionButtonsContainer.appendChild(shellDiv);
+resultsContainer.appendChild(shellDiv);
