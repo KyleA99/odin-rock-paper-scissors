@@ -17,6 +17,10 @@
   align-items: center;
 }
 
+div {
+    border: 2px solid red;
+    } 
+
 .header-title {
   list-style-type: none;
   display: flex;
@@ -51,20 +55,32 @@
   padding-bottom: 50px;
 }
 
-.selectionButtonsContainer {
+#selectionButtonsContainer {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
-  }
-
-button#rock, button#paper, button#scissors {
-  border: none;
-  width: 180px;
-  height: 180px;
 }
 
-img.image-rock, img.image-paper, img.image-scissors {
-  width: 180px;
-  height: 180px;
+#selectionButtonsContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#buttons-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px
+}
+
+#rock, #paper, #scissors {
+  border: none;
+  width: 140px;
+  height: 140px;
+}
+
+.image-rock, .image-paper, .image-scissors {
+  width: 140px;
+  height: 140px;
 }
