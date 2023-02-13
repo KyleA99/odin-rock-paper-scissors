@@ -28,7 +28,7 @@
   list-style-type: none;
   margin: 8px;
   gap: 24px;
-  font-family: "Brush Script MT", sans-serif;
+  font-family: Brush Script MT, sans-serif;
   font-size: 48px;
   color: #36d633;
 
@@ -49,6 +49,7 @@
   text-align: center;
   padding-top: 100px;
   padding-bottom: 50px;
+  font-family: Monospace, sans-serif;
 }
 
 #selectionButtonsContainer {
@@ -91,6 +92,10 @@
 
 #resetButtonContainer {
     text-align: center;
+}
+
+#resetButton {
+    font-family: Monospace, sans-serif;
 }
 
 #footer {
