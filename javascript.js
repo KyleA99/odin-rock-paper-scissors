@@ -123,11 +123,11 @@ let calculateGameScore = result => {
     }
 
   if (playerScore > computerScore) {
-    return (`The score is: ${playerScore}, ${computerScore}`);
+    return (`The score (player, computer) is: ${playerScore}, ${computerScore}`);
   } else if (playerScore < computerScore) {
-    return (`The score is: ${playerScore}, ${computerScore}`);
+    return (`The score (player, computer) is: ${playerScore}, ${computerScore}`);
   } else {
-    return (`The score is: ${playerScore}, ${computerScore}`);
+    return (`The score (player, computer) is: ${playerScore}, ${computerScore}`);
   }
 }
 // console.log(game(result)); doesnt work
@@ -146,6 +146,7 @@ let seriesWinner = (playerScore, computerScore) => {
   } else {
     // Do nothing.
   }
+
 // Try...catch statement for error handling
   try {
       if (playerScore > 5 || computerScore > 5) throw "exceeds 5"
@@ -207,7 +208,7 @@ resultsContainer.appendChild(shellDiv);
 // A <h5> that announces the winner of the series
 seriesResults = document.createElement("h5");
 seriesResults.classList.add("seriesResultsContent");
-seriesResults.style.color = "red";
+seriesResults.style.color = "#36d633";
 
 shellDiv.appendChild(seriesResults);
 resultsContainer.appendChild(shellDiv);

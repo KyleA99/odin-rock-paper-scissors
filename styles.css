@@ -49,7 +49,7 @@ div {
 
 .instructions {
   color: white;
-  font-size: 24px;
+  font-size: 36px;
   text-align: center;
   padding-top: 100px;
   padding-bottom: 50px;
@@ -71,7 +71,8 @@ div {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 #rock, #paper, #scissors {
@@ -83,4 +84,15 @@ div {
 .image-rock, .image-paper, .image-scissors {
   width: 140px;
   height: 140px;
+}
+
+#resultsContainer {
+    font-size: 30px;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#resetButtonContainer {
+    text-align: center;
 }
