@@ -58,7 +58,6 @@ let concatenateSelections = (playerSelection, computerSelection) => (playerSelec
   playerSelection = playerSelection;
   //playerSelection = how to call button.id here?
   computerSelection = getComputerChoice();
-// console.log(concatenateSelections(playerSelection, computerSelection)); doesnt work...
 
 /**
  * Evaluates the winner of a single round using a switch case statement 
@@ -91,7 +90,6 @@ let playRound = (playerSelection, computerSelection) => {
   }
   return playRoundResult;
 }
-// console.log(playRound(playerSelection, computerSelection)) doesnt work...
 
 /**
  * Returns a message declaring whether the player won, lost, or tied for the DOM display
@@ -107,7 +105,6 @@ let determineRoundResult = result => {
     return (playerRoundTie)
   }
 }  
-// console.log(roundResult()); doesnt work...
 
 /**
  * Calls the playRound function, increments the player and computer scores, and displays the winner for a 5 round game
@@ -130,7 +127,6 @@ let calculateGameScore = result => {
     return (`The score (player, computer) is: ${playerScore}, ${computerScore}`);
   }
 }
-// console.log(game(result)); doesnt work
 
 /**
  * Determines the winner of the series (first to reach a score of 5)
@@ -155,7 +151,6 @@ let seriesWinner = (playerScore, computerScore) => {
     alert ("Round count " + err);
   }
 }
-  // console.log(seriesWinner(playerScore, computerScore)); doesnt work...
 
 /**
  * Disables the rock, paper, and scissors selection buttons if seriesResult returns a string successfully
@@ -171,7 +166,6 @@ let endGame =() => {
   // Do nothing.
   }
 }
-// console.log(endGame()); doesnt work...
 
 /**
  * Reloads window/webpage
