@@ -99,6 +99,7 @@ div {
 
 #footer {
     display: flex;
+    justify-content: center;
 }
 
 #footer-info {
@@ -107,6 +108,8 @@ div {
     justify-content: center;
     align-items: center;
     padding: 10px;
+    position:fixed;
+    bottom:0;
 }
 
 #footer-text {
