@@ -98,11 +98,11 @@ let playRound = (playerSelection, computerSelection) => {
  */
 let determineRoundResult = result => {
   if (result === "Win") {
-    return (playerRoundWin)
+    return (playerRoundWin);
   } else if (result === "Lose") {
-    return (playerRoundLose)
+    return (playerRoundLose);
   } else {
-    return (playerRoundTie)
+    return (playerRoundTie);
   }
 }  
 
