@@ -1,3 +1,10 @@
+:root {
+  --clr-primary: #36d633;
+  --clr-secondary: white;
+  --clr-shadow-primary: #fff;
+  --clr-shadow-secondary: #0fa;
+}
+
 *,
 *::before,
 *::after { 
@@ -30,21 +37,21 @@
   gap: 24px;
   font-family: Brush Script MT, sans-serif;
   font-size: 48px;
-  color: #36d633;
+  color: var(--clr-primary);
 
   text-shadow:
-    0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 42px #0fa,
-    0 0 82px #0fa,
-    0 0 92px #0fa,
-    0 0 102px #0fa,
-    0 0 151px #0fa;
+    0 0 7px var(--clr-shadow-primary),
+    0 0 10px var(--clr-shadow-primary),
+    0 0 21px var(--clr-shadow-primary),
+    0 0 42px var(--clr-shadow-secondary),
+    0 0 82px var(--clr-shadow-secondary),
+    0 0 92px var(--clr-shadow-secondary),
+    0 0 102px var(--clr-shadow-secondary),
+    0 0 151px var(--clr-shadow-secondary);
 }
 
 .instructions {
-  color: white;
+  color: var(--clr-secondary);
   font-size: 36px;
   text-align: center;
   padding-top: 100px;
@@ -114,7 +121,7 @@
 }
 
 #footer-text {
-    color: white;
+    color: var(--clr-secondary);
     font: 20px;
 }
 
