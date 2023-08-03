@@ -3,6 +3,9 @@
   --clr-secondary: white;
   --clr-shadow-primary: #fff;
   --clr-shadow-secondary: #0fa;
+
+  --ff-primary: monospace, sans-serif;
+  --ff-secondary: "Brush Script MT", sans-serif;
 }
 
 *,
@@ -35,10 +38,9 @@
   list-style-type: none;
   margin: 8px;
   gap: 24px;
-  font-family: Brush Script MT, sans-serif;
+  font-family: var(--ff-secondary);
   font-size: 48px;
   color: var(--clr-primary);
-
   text-shadow:
     0 0 7px var(--clr-shadow-primary),
     0 0 10px var(--clr-shadow-primary),
@@ -56,7 +58,7 @@
   text-align: center;
   padding-top: 100px;
   padding-bottom: 50px;
-  font-family: Monospace, sans-serif;
+  font-family: var(--ff-primary);
 }
 
 #selectionButtonsContainer {
@@ -102,7 +104,7 @@
 }
 
 #resetButton {
-    font-family: Monospace, sans-serif;
+    font-family: var(--ff-primary);
 }
 
 #footer {
@@ -116,8 +118,8 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
-    position:fixed;
-    bottom:0;
+    position: fixed;
+    bottom: 0;
 }
 
 #footer-text {
