@@ -50,8 +50,8 @@ buttons.forEach((button) => {
 
 /**
  * Concatenates player and computer selections for each round
- * @param {*} playerSelection Calls the value for the player's move
- * @param {*} computerSelection Calls the value for the computer's move
+ * @param {string} playerSelection Calls the value for the player's move
+ * @param {string} computerSelection Calls the value for the computer's move
  * @returns A string containing the concatenated selections
  */
 let concatenateSelections = (playerSelection, computerSelection) => (playerSelection + computerSelection);
