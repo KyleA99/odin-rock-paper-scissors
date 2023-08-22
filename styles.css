@@ -129,5 +129,7 @@ button:hover {
 }
 
 .github-logo {
-    padding: 5px;
+    width: 25px;
+    height: 25px;
+    margin: 5px;
 }
