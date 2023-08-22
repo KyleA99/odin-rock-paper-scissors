@@ -63,11 +63,11 @@ html {
 }
 
 #buttons-div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 #rock, #paper, #scissors {
@@ -88,42 +88,42 @@ button:hover {
 }
 
 #resultsContainer {
-    font-size: 30px;
-    text-align: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .reset-button-container {
-    text-align: center;
+  text-align: center;
 }
 
 #resetButton {
-    font-family: var(--ff-primary);
+  font-family: var(--ff-primary);
 }
 
 .footer {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .footer-info {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
 }
 
 .footer-text {
-    color: var(--clr-secondary);
-    font: 20px;
+  color: var(--clr-secondary);
+  font: 20px;
 }
 
 .github-logo {
-    width: 25px;
-    height: 25px;
-    margin: 5px;
+  width: 25px;
+  height: 25px;
+  margin: 5px;
 }
