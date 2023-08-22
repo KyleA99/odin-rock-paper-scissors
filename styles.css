@@ -1,11 +1,11 @@
 :root {
-  --clr-primary: #36d633;
+  --clr-primary: #000000;
   --clr-secondary: white;
-  --clr-shadow-primary: #fff;
-  --clr-shadow-secondary: #0fa;
+  --clr-gradient-primary: #5affff;
+  --clr-gradient-secondary: #8000ff;
+  --clr-hover: #51a5ff;
 
   --ff-primary: monospace, sans-serif;
-  --ff-secondary: "Brush Script MT", sans-serif;
 }
 
 *,
@@ -14,6 +14,10 @@
   margin: 0; 
   padding: 0; 
   box-sizing: border-box; 
+}
+
+html {
+  background-image: linear-gradient(to right, var(--clr-gradient-primary), var(--clr-gradient-secondary));
 }
 
 .body {
@@ -38,18 +42,9 @@
   list-style-type: none;
   margin: 8px;
   gap: 24px;
-  font-family: var(--ff-secondary);
+  font-family: var(--ff-primary);
   font-size: 48px;
-  color: var(--clr-primary);
-  text-shadow:
-    0 0 7px var(--clr-shadow-primary),
-    0 0 10px var(--clr-shadow-primary),
-    0 0 21px var(--clr-shadow-primary),
-    0 0 42px var(--clr-shadow-secondary),
-    0 0 82px var(--clr-shadow-secondary),
-    0 0 92px var(--clr-shadow-secondary),
-    0 0 102px var(--clr-shadow-secondary),
-    0 0 151px var(--clr-shadow-secondary);
+  color: var(--clr-secondary);
 }
 
 .instructions {
@@ -82,9 +77,15 @@
 }
 
 #rock, #paper, #scissors {
-  border: none;
+  border: solid 1px gray;
+  border-radius: 2rem;
   width: 140px;
-  height: 140px;
+  height: 70px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--clr-hover);
 }
 
 .image-rock, .image-paper, .image-scissors {
