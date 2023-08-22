@@ -94,7 +94,7 @@ button:hover {
     padding-bottom: 30px;
 }
 
-#resetButtonContainer {
+.reset-button-container {
     text-align: center;
 }
 
@@ -102,12 +102,12 @@ button:hover {
     font-family: var(--ff-primary);
 }
 
-#footer {
+.footer {
     display: flex;
     justify-content: center;
 }
 
-#footer-info {
+.footer-info {
     display: flex;
     flex: 1;
     justify-content: center;
@@ -117,7 +117,7 @@ button:hover {
     bottom: 0;
 }
 
-#footer-text {
+.footer-text {
     color: var(--clr-secondary);
     font: 20px;
 }
