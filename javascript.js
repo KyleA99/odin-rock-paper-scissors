@@ -12,6 +12,7 @@ const playerRoundTie = "Tie!";
 
 let buttons = document.querySelectorAll("#buttons-div > button");
 const resetButton = document.querySelector("resetButton");
+const resultsContainer = document.getElementById("results-container");
 
 // Game Logic
 
